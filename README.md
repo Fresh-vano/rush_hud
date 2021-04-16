@@ -5,17 +5,8 @@
 	<p align="center" style="font-weight:400;">Powered by <a href='https://github.com/lexogrine/hud-manager'><strong>« Lexogrine HUD Manager »</strong></a></p>
 </p>
 
-# Lexogrine HUD
+# RUSH HUD
 
-  
-
-Fullfledged example of the React HUD made for HUD Manager. It has:
-
-- Custom actions
-- Keybinds
-- Killfeed
-- Player cam feed
-- Custom Radar
 
 ## Keybinds:
 ### **Left Alt + S**
@@ -51,13 +42,6 @@ Fullfledged example of the React HUD made for HUD Manager. It has:
 |  Left/right box's title| `Text` |
 |  Left/right box's image logo| `Image file` |
 
-## Example settings
-
-![Preview of HUDs settings](settings.png)
-
-## Preview
-
-![Preview of HUDs panel in action](preview.png)
 
 # Download
 

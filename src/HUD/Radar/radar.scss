@@ -19,6 +19,9 @@
 	justify-content: space-evenly;
 	background-color: var(--blue);
 	opacity: 0.8;
+	border-radius: 10px;
+	position:absolute;
+	top: 10px;
 }
 .veto_entry {
 	display: flex;
