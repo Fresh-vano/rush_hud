@@ -29,6 +29,17 @@
 	  transform: translate3d(0, 100%, 0);
 	}*/
 }
+
+@keyframes round_timer{
+	from{
+		letter-spacing: normal;
+		opacity: 1;
+	}
+	to{
+		letter-spacing: 3px;
+		opacity: 0;
+	}
+}
   
 .fadeOutDown {
 	-webkit-animation-name: fadeOutDown;
@@ -94,7 +105,7 @@
             }
 		}
 	}
-	#round_timer_text {
+	.round_timer_text {
 		position: absolute;
 		width: 120px;
 		height: 40px;
@@ -111,6 +122,9 @@
         &.hide {
             display: none;
         }
+		&.freezetime{
+			animation: round_timer 1s infinite;
+		}
 	}
 	#round_now {
 		position: absolute;

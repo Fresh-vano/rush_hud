@@ -25,6 +25,7 @@ interface IProps {
   map: I.Map;
   phase: I.PhaseRaw,
   bomb: I.Bomb | null,
+  isFreezetime: boolean;
 }
 
 export interface Timer {
@@ -168,7 +169,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
   }
   render() {
     const { defusing, planting, winState } = this.state;
-    const { bomb, match, map, phase } = this.props;
+    const { bomb, match, map, phase, isFreezetime } = this.props;
     const time = stringToClock(phase.phase_ends_in);
     const left = map.team_ct.orientation === "left" ? map.team_ct : map.team_t;
     const right = map.team_ct.orientation === "left" ? map.team_t : map.team_ct;
@@ -176,6 +177,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
     const bo = (match && Number(match.matchType.substr(-1))) || 0;
     const amountOfMaps = (match && Math.floor(Number(match.matchType.substr(-1)) / 2) + 1) || 0;
     let leftTimer: Timer | null = null, rightTimer: Timer | null = null;
+    let time10: number = +time.substring(2);
     if(defusing.active || planting.active){
       if(defusing.active){
         if(defusing.side === "left") leftTimer = defusing;
@@ -191,13 +193,13 @@ export default class TeamBox extends React.Component<IProps, IState> {
           <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} />
           <div className={`score_section_left ${left.side}`}>
             <div className="best_of">
-              <div className={`block1 ${left.matches_won_this_series===2 ? "win" : ""}`}></div>
-              <div className={`block2 ${left.matches_won_this_series===1 ? "win" : ""}`}></div>
+              <div className={`block1 ${left.matches_won_this_series===1 ? "win" : ""}`}></div>
+              <div className={`block2 ${left.matches_won_this_series===2 ? "win" : ""}`}></div>
             </div>
             <div className={`score left ${left.side}`}>{left.score}</div>
           </div>
           <div id="timer" className={bo === 0 ? 'no-bo' : ''}>
-            <div id={`round_timer_text`} className={isPlanted ? "hide":""}>{time}</div>
+            <div className={`round_timer_text ${isFreezetime&&time10<=10 ? 'freezetime':''} ${isPlanted ? "hide":""}`}>{time}</div>
             <div id="round_now" className={isPlanted ? "hide":""}>{this.getRoundLabel()}</div>
             <Bomb />
           </div>
