@@ -1,0 +1,645 @@
+.teambox {
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.75s;
+    width: 585px;
+    height: 425px;
+    &.CT {
+        .player .hp_bar, .player .player_kill_background {
+            background-color: var(--color-new-ct);
+        }
+    }
+    &.T {
+        .player .hp_bar, .player .player_kill_background {
+            background-color: var(--color-new-t);
+        }
+    }
+    &.hide {
+        opacity: 0;
+    }
+    &.left {
+        left: 10px;
+        .player {
+            .avatar{
+                float: left;
+            }
+            .player_section_top, .hp_bar{
+                border-top-right-radius: 10px;
+            }
+            .player_section_bottom{
+                border-bottom-right-radius: 10px;
+            }
+            .health{
+                text-align: right;
+                right: 10px;
+            }
+            .username, .money {
+                float: left;
+                left: 10px;
+            }
+            .username {
+                text-align: left;
+            }
+            .armor {
+                left: 45%;
+            }
+            .bomb{
+                left: 6%;
+            }
+            .grenades {
+                float: right;
+                right: 10px;
+            }
+            .player_round_kills {
+                left: 10px;
+                .kill{
+                    .player_kill_background{
+                        float: left;
+                    }
+                    .player_kills_img{
+                        margin-right: 4px;
+                        float: left;
+                    }
+                    .player_kills{
+                        margin-right: 5px;
+                        float: left;
+                    }
+                    .player_kills_text_now{
+                        float: left;
+                    }
+                }
+                .player_dead{
+                    float: right;
+                    margin-right: 4px;
+                }
+                .player_dead_text{
+                    text-align: left;
+                    float: right;
+                }
+            }
+            .hp_bar, .player_section_top, .player_section_center, .player_section_bottom {
+                left: 82px;
+            }
+            .weapon{
+                float: right;
+                right: 5px;
+                .svg{
+                    float: right;
+                }
+            }
+
+
+
+
+
+
+            .row {
+                flex-direction: row;
+                .grenades {
+                    padding-right: 5px;
+                }
+            
+                .username .roundkills-container {
+                    right: 115px;
+                }
+                
+            }
+            .dead-stats {
+                right: 8px;
+            }
+        }
+    }
+    &.right {
+        right: 10px;
+        .player {
+            .player_data, .avatar {
+                float: right;
+            }
+            .player_section_top, .hp_bar{
+                border-top-left-radius: 10px;
+            }
+            .player_section_bottom{
+                border-bottom-left-radius: 10px;
+            }
+            .health{
+                text-align: left;
+                left: 10px;
+            }
+            .username {
+                text-align: right;
+                float: right;
+                right: 10px;
+            }
+            .money{
+                text-align: right;
+                float: right;
+                right:10px;
+
+            }
+            .armor{
+                right: 45%;
+            }
+            .bomb{
+                left: 30px;
+            }
+            .grenades {
+                left: 20px;
+            }
+            .hp_bar, .player_section_top, .player_section_center, .player_section_bottom {
+                right: 82px;
+            }
+            .player_data .player_section_center .weapon svg.weapon{
+                float: left;
+                transform: scaleX(-1);
+                right: 5px;
+            }
+            .weapon{
+                float: left;
+                left: 5px;
+            }
+            .grenades{
+                float: left;
+                left: 10px;
+            }
+            .player_round_kills{
+                float: right;
+                right: 11px;
+                .player_kill_background{
+                    float: right;
+                }
+                .player_kills_img{
+                    float: right;
+                    margin-right: 0;
+                }
+                .player_kills{
+                    float: right;
+                    margin-right: 4px;
+                    margin-left: 5px;
+                }
+                .player_dead{
+                    float: right;
+                    margin-right: 0;
+                    margin-left: 4px;
+                }
+                .player_dead_text{
+                    float: right;
+                    text-align: right;
+                }
+            }
+
+
+
+
+
+
+            .dead-stats {
+                left: 8px;
+            }
+                .hp_bar {
+                    align-self: flex-end;
+                }
+                .row {
+                    flex-direction: row-reverse;
+                    .grenades {
+                        padding-left: 5px;
+                    }
+                    .username {
+                        flex-direction: row-reverse;
+                        .roundkills-container {
+                            left: 115px;
+                        }
+                    }
+                    .secondary_weapon {
+                        padding-left: 10px;
+                    }
+                    .armor_and_utility {
+                        justify-content: flex-end;
+                    }
+                    .money {
+                        margin-left: auto;
+                        justify-content: flex-end;
+                    } 
+                    
+                }
+                .avatar {
+                    justify-content: flex-start;
+                }
+            
+        }
+    }  
+    .player {
+        width: 585px;
+        height: 80px;
+        position: relative;
+        margin-bottom: 5px;
+        &.active {
+            .player_data {
+                border-radius: 10px;
+                z-index: 2;
+                border: 2px solid white;
+            }
+        }
+        &.dead {
+            opacity: 0.8;
+            .player_side_bar {
+                background-color: var(--main-panel-color) !important;
+            }
+            .player_data {
+                .avatar {
+                    filter: grayscale(100%);
+                }   
+                .player_section_top, .player_section_center, .player_section_bottom{
+                    //width: 40%;
+                }
+                .player_section_top .health {
+                    opacity: 0;
+                }
+                .player_section_bottom .player_round_kills .kill .player_kill_background{
+                    opacity: 0;
+                }
+            }
+        }
+        
+        .player_data {
+            width: 387px;
+            position: relative;
+            height: 80px;
+            .hp_bar {
+                max-width: 305px;
+                height: 25px;
+                position: absolute;
+                z-index: 1;
+                &.CT {
+                    background-color: var(--color-new-ct);
+                }
+                &.T {
+                    background-color: var(--color-new-t);
+                }
+                &.low {
+                background-color: red;
+                }
+            }
+            .player_section_top{
+                width: 305px;
+                height: 25px;
+                position: absolute; 
+                background-color: var(--main-panel-color);
+                .health{
+                    width: 40px;
+                    height: 100%;
+                    position: absolute;
+                    font-family: "Arial", sans-serif;
+                    vertical-align: text-bottom;
+                    line-height: 25px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    opacity: 1;
+                    color: var(--white-full);
+                    z-index: 1;
+                }
+                .username{
+                    width: 200px;
+                    height: 100%;
+                    font-family: "Arial", sans-serif;
+                    vertical-align: text-bottom;
+                    line-height: 25px;
+                    font-size: 18px;
+                    font-weight: normal;
+                    position: relative;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    color: var(--white-full);
+                    z-index: 1;
+                }
+            }
+            .player_section_center{
+                width: 305px;
+                height: 30px;
+                position: absolute;
+                top: 25px;
+                background-color: var(--sub-panel-color);
+                .money{
+                    width:80px;
+                    height: 30px;
+                    position: relative;
+                    font-family: "Arial", sans-serif;
+                    vertical-align: middle;
+                    line-height: 30px;
+                    font-size: 18px;
+                    font-weight: normal;
+                    color: var(--color-moneys);
+                }
+                .armor{
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    top: 5px;
+                    display: flex;
+                    
+                    .armor_indicator{
+                        svg {
+                            max-height: 18px;
+                            max-width: 18px;
+                            fill: white;
+                        }
+                    }
+                }
+                .weapon{
+                    max-width: 100px;
+                    height: 25px;
+                    position: relative;
+                    top: 2px;
+                    .svg{
+                        max-height: 25px;
+                        width: auto;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        max-width: 100px;
+                        height: 25px;
+                    }
+                }
+            }
+            .player_section_bottom {
+                width: 305px;
+                height: 25px;
+                position: absolute;
+                top: 55px;
+                background-color: var(--sub-panel-color);
+                .bomb {
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    display: flex;
+                    .defuse_indicator, .armor_indicator{
+                        svg {
+                            max-height: 20px;
+                            height: 20px;
+                            fill: white;
+                        }
+                    }
+                }
+                .grenades {
+                    max-width: 90px;
+                    height: 20px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    svg.grenade {
+                        max-height: 20px;
+                        height: 20px;
+                        margin-left: 4px;
+                    }
+                }
+                .player_round_kills {
+                    width: 122px;
+                    height: 20px;
+                    position: relative;
+                    opacity: 1;
+                    .kill{
+                        height: 20px;
+                        width: 72px;
+                        position: relative;
+                        float: left;
+                        .player_kill_background{
+                            width: 18px;
+                            height: 18px;
+                            position: relative;
+                            opacity: 1;
+                            border-radius: 50%;
+                            top: 3px;
+                            &.zero{
+                                opacity: 0;
+                            }
+                            .player_kill_now{
+                                width: 18px;
+                                height: 18px;
+                                position: relative;
+                                font-family: "Arial", sans-serif;
+                                vertical-align: middle;
+                                line-height: 18px;
+                                font-size: 14px;
+                                font-weight: normal;
+                                text-align: center;
+                            }
+                        }
+                        .player_kills_img{
+                            width: 18px;
+                            height: 18px;
+                            position: relative;
+                            background-image: url('./../../assets/crosshair_default.png');
+                            max-height: 30px;
+                            max-width: 30px;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            top: 1px;
+                        }
+                        .player_kills{
+                            max-width: 30px;
+                            height: 20px;
+                            font-family: "Arial", sans-serif;
+                            vertical-align: text-bottom;
+                            line-height: 20px;
+                            font-size: 18px;
+                            font-weight: normal;
+                            position: relative;
+                            text-align: center;
+                            color: var(--white-full);
+                            top: 1px;
+                        }
+                    }
+                    .dead{
+                        width: 45px;
+                        height: 20px;
+                        position: relative;
+                        float: right;
+                        margin-left: 5px;
+                        .player_dead{
+                            width: 16px;
+                            height: 16px;
+                            position: relative;
+                            top: 3px;
+                            background-image: url('./../../assets/skull.png');
+                            max-height: 30px;
+                            max-width: 30px;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                        }
+                        .player_dead_text{
+                            width: 25px;
+                            height: 20px;
+                            font-family: "Arial", sans-serif;
+                            vertical-align: text-bottom;
+                            line-height: 20px;
+                            font-size: 18px;
+                            font-weight: normal;  
+                            position: relative;
+                            color: var(--white-full);
+                            top: 1px;
+                        }
+                    }
+                }
+            }
+                
+                /*.row {
+                    flex: 1;
+                    display: flex;
+                    position: relative;
+                    svg.weapon {
+                        filter: invert(45%);
+                        &.active {
+                            filter: invert(0);
+                        }
+                    }
+                    .hp_background, .hp_background_2 {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 0;
+                    }
+                    .hp_background_2 {
+                        background-color: var(--color-bomb);
+                        transition: width 0.75s 1.5s;
+                    }
+                    .armor_and_utility {
+                        width: 39px;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        .armor_indicator, .bomb_indicator, .defuse_indicator {
+                            svg {
+                                max-height: 20px;
+                                fill: white;
+                            }
+                        }
+                        div {
+                            display: flex;
+                            width: 50%;
+                        }
+                    }
+                    .username {
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        z-index: 1;
+                        color: white;
+                        font-weight: 600;
+                        max-width: calc(100% - 49px);
+                        justify-content: space-between;
+                        overflow: hidden;
+                        font-size: 18px;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        .roundkills-container {
+                            position: absolute;
+                            background-image: url('./../../assets/images/icon_skull_default.svg');
+                            background-repeat: no-repeat;
+                            background-size: 10px;
+                            background-position: left 2px;
+                            padding-left: 16px;
+                            font-size: 13px;
+                        }
+                        div span {
+                            opacity: 0.6;
+                            font-size:15px;
+                        }
+                        svg.weapon {
+                            max-height: 30px;
+                            width: auto;
+                            margin-left: 5px;
+                            margin-right: 5px;
+                            max-width: 100px;
+                            height: 30px;
+                        }
+                    }
+                    .money {
+                        width: 60px;
+                        color: var(--color-moneys);
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+                    
+                    .health {
+                        width: 49px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 1;
+                        color: white;
+                        font-weight: 600;
+                        font-size:18px;
+                    }
+                    .secondary_weapon {
+                        display: flex;
+                        align-items: center;
+                        svg {
+                            max-height: 30px;
+                            height: 30px;
+                        }
+                    }
+                }*/
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                position: relative;
+            }
+        }
+    }
+
+.players_alive {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    background-color: var(--blue);
+    position: fixed;
+    right: 55px;
+    top: 10px;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: opacity 1s;
+    .counter_container {
+        display: flex;
+        height: 45px;
+        > div {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:32px;
+            color: white;
+        }
+        .CT {
+            color: var(--color-new-ct);
+        }
+        .T {
+            color: var(--color-new-t);
+        }
+    }
+    .title_container {
+        top: 5px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        height:20px;
+        font-size:14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &.hide {
+        opacity: 0;
+    }
+}

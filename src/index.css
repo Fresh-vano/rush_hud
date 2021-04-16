@@ -1,0 +1,56 @@
+
+@import "fonts/Arial.css";
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*background-image: url('./assets/bg.png');/**/
+}
+
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: local('Louis George Cafe'), url('./fonts/Louis George Cafe.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rounded_Elegance';
+  src: local('Rounded_Elegance'), url('./fonts/Rounded_Elegance.ttf') format('truetype');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --color-new-t: #e2a200;
+  --color-new-ct: #0068d8;
+
+  --main-panel-color:  #181c1fd8;
+
+  --sub-panel-color: #2d3134a9;
+  --top:#262424;
+  --blue: #02102a;
+  --white-dull: rgba(250, 250, 250, 0.25);
+  --white-full: rgba(250, 250, 250, 1);
+  --white-half: rgba(250, 250, 250, 0.5);
+  --color-moneys: rgb(133,187,101);
+  --color-bomb: #f22222;
+  --color-defuse: #2222f2;
+}
+
+
+
