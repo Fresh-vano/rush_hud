@@ -3,7 +3,7 @@
 	top: 10px;
 	left: 10px;
 	border: none;
-	background-color: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0.5);
 }
 #iframe_radar {
 	border: none;
@@ -20,7 +20,7 @@
 	background-color: var(--blue);
 	opacity: 0.8;
 	border-radius: 10px;
-	position:absolute;
+	position:relative;
 	top: 10px;
 }
 .veto_entry {

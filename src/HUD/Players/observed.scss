@@ -152,7 +152,7 @@
                 font-weight: normal;
                 color: var(--white-full);
                 float: left;
-                margin-right: 6px;
+                margin-right: 10px;
             }
         }
 
@@ -189,6 +189,7 @@
                 position: relative;
                 float: left;
                 margin-left: 4px;
+                letter-spacing: 1px;
                 .obs_clip{
                     max-width: 44px;
                     height: 30px;
@@ -400,19 +401,18 @@
     opacity: 0.75;
     transform: translateX(-50%);
     border-radius: 10px;
-    background: rgb(2,16,42);
-    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, rgba(2,16,42,1) 15%, rgba(2,16,42,1) 85%, rgba(2,16,42,0) 100%);
+    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, rgba(57, 13, 151,1) 15%, rgba(99, 29, 207,1) 85%, rgba(2,16,42,0) 100%);
     filter: blur(px);
     .league_box_img{
-        height: 90%;
-        width: 50%;
-        background-image: url('./../../assets/Logo.png');
+        height:90%;
+        width: 80%;
+        background-image: url('./../../assets/oblozhka5.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position:center;
         max-width: 50%;
         max-width: 90%;
-        margin-top: 10px;
+        margin-top:5px;
         margin-left: auto;
         margin-right: auto;
     }

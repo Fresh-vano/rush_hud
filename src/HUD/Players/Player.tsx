@@ -40,7 +40,7 @@ export default class PlayerBox extends React.Component<IProps> {
       <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
         <div className="player_data">
           <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
-          <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}% - 70px)` }}></div>
+          <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}%)` }}></div>
           <div className="player_section_top">
             <div className="health">{player.state.health}</div>
             <div className="username"><div>{player.name}</div>
@@ -85,7 +85,7 @@ export default class PlayerBox extends React.Component<IProps> {
         <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
           <div className="player_data">
             <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
-            <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}% - 70px)` }}></div>
+            <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}%)` }}></div>
             <div className="player_section_top">
               <div className="health">{player.state.health}</div>
               <div className="username"><div>{player.name}</div>

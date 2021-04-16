@@ -411,7 +411,7 @@
                             position: relative;
                             opacity: 1;
                             border-radius: 50%;
-                            top: 3px;
+                            top: 2px;
                             &.zero{
                                 opacity: 0;
                             }
@@ -450,7 +450,7 @@
                             position: relative;
                             text-align: center;
                             color: var(--white-full);
-                            top: 1px;
+                            top: -1px;
                         }
                     }
                     .dead{
@@ -481,7 +481,7 @@
                             font-weight: normal;  
                             position: relative;
                             color: var(--white-full);
-                            top: 1px;
+                            top: -1px;
                         }
                     }
                 }
