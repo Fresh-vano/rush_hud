@@ -251,9 +251,9 @@
                 .avatar {
                     filter: grayscale(100%);
                 }   
-                .player_section_top, .player_section_center, .player_section_bottom{
+                /*.player_section_top, .player_section_center, .player_section_bottom{
                     //width: 40%;
-                }
+                }*/
                 .player_section_top .health {
                     opacity: 0;
                 }
@@ -411,7 +411,7 @@
                             position: relative;
                             opacity: 1;
                             border-radius: 50%;
-                            top: 2px;
+                            top: 1px;
                             &.zero{
                                 opacity: 0;
                             }
