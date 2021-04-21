@@ -28,10 +28,13 @@ export default class TeamBox extends React.Component<Props> {
         }
       }
     });{
-      if(id===index_left || id===index_right)
-        return true;
-      else
-        return false;
+      if(max_kill_left>max_kill_right)
+        if(id===index_left)
+          return true;
+      else 
+        if(id===index_right)
+          return true;
+      return false;
     }
   }
   render() {
