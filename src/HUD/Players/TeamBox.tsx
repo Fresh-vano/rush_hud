@@ -9,17 +9,41 @@ interface Props {
   side: 'right' | 'left',
   current: I.Player | null,
   isFreezetime: boolean,
+  map: I.Map,
 }
 
 export default class TeamBox extends React.Component<Props> {
+  top_player(id: string):boolean {
+    var max_kill_left= 0, index_left='', index_right='',max_kill_right= 0;
+    this.props.players.map(Player => {
+      if(Player.team.side==="CT")
+        if(Player.stats.kills>max_kill_left){
+          max_kill_left=Player.stats.kills;
+          index_left = Player.steamid;
+        }
+      if(Player.team.side==="T"){
+        if(Player.stats.kills>max_kill_right){
+          max_kill_right=Player.stats.kills;
+          index_right = Player.steamid;
+        }
+      }
+    });{
+      if(id===index_left || id===index_right)
+        return true;
+      else
+        return false;
+    }
+  }
   render() {
     return (
       <div className={`teambox ${this.props.team.side} ${this.props.side}`}>
         {this.props.players.map(player => <Player
+          players={this.props.players}
           key={player.steamid}
           player={player}
           isObserved={!!(this.props.current && this.props.current.steamid === player.steamid)}
           isFreezetime={this.props.isFreezetime}
+          top_player={this.props.map.round+1>4&&this.top_player(player.steamid)&&this.props.isFreezetime}
         />)}
       </div>
     );

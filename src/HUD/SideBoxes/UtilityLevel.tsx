@@ -51,7 +51,6 @@ class GrenadeContainer extends React.PureComponent<{ grenade: string; amount: nu
 export default class SideBox extends React.Component<Props> {
     render() {
         const grenades = summarise(this.props.players, this.props.side);
-        const total = Object.values(grenades).reduce((a, b) => a+b, 0);
         return (
             <div className={`utilitybox ${this.props.side || ''} ${this.props.show ? "show" : "hide"}`}>
                 <div className="title_container">

@@ -5,25 +5,13 @@ import Avatar from "./Avatar";
 import Armor from "./../Indicators/Armor";
 import Bomb from "./../Indicators/Bomb";
 import Defuse from "./../Indicators/Defuse";
-import { Stats } from "fs";
-import { Z_ERRNO } from "zlib";
 
 interface IProps {
+  players: Player[],
   player: Player,
   isObserved: boolean,
   isFreezetime: boolean,
-}
-
-class Statistic extends React.PureComponent<{ value: string | number, }> {
-	render() {
-		return (
-				<div className="value">{this.props.value}</div>
-		);
-	}
-}
-
-function change (){
-  <style></style>
+  top_player:boolean;
 }
 
 export default class PlayerBox extends React.Component<IProps> {
@@ -35,11 +23,13 @@ export default class PlayerBox extends React.Component<IProps> {
     const secondary = weapons.filter(weapon => weapon.type === "Pistol")[0] || null;
     const grenades = weapons.filter(weapon => weapon.type === "Grenade");
     const isLeft = player.team.orientation === "left";
+    const top_player = this.props.top_player;
     if(isLeft){
     return (
       <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
         <div className="player_data">
           <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
+          <div className={`glow ${"left"} ${top_player ? "TOP" : ""}`}></div>
           <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}%)` }}></div>
           <div className="player_section_top">
             <div className="health">{player.state.health}</div>
@@ -85,6 +75,7 @@ export default class PlayerBox extends React.Component<IProps> {
         <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
           <div className="player_data">
             <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
+            <div className={`glow ${"right"} ${top_player ? "TOP" : ""}`}></div>
             <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}%)` }}></div>
             <div className="player_section_top">
               <div className="health">{player.state.health}</div>

@@ -1,3 +1,15 @@
+@keyframes glow{
+    0%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 .teambox {
     position: fixed;
     bottom: 10px;
@@ -251,9 +263,9 @@
                 .avatar {
                     filter: grayscale(100%);
                 }   
-                .player_section_top, .player_section_center, .player_section_bottom{
+                /*.player_section_top, .player_section_center, .player_section_bottom{
                     //width: 40%;
-                }
+                }*/
                 .player_section_top .health {
                     opacity: 0;
                 }
@@ -267,6 +279,28 @@
             width: 387px;
             position: relative;
             height: 80px;
+            .glow{
+                position: absolute;
+                width: 387px;
+                height: 80px;
+                z-index: 3;
+                opacity: 0;
+                &.left{
+                    border-bottom-right-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                &.right{
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+                &.TOP{
+                    //color: rgb(255,74,0);
+                    box-shadow: 0 0 20px #faca0a;
+                    //color: #faca0a;
+                    opacity: 1;
+                    //animation: glow 12s;
+                }
+            }
             .hp_bar {
                 max-width: 305px;
                 height: 25px;
@@ -411,7 +445,7 @@
                             position: relative;
                             opacity: 1;
                             border-radius: 50%;
-                            top: 2px;
+                            top: 1px;
                             &.zero{
                                 opacity: 0;
                             }

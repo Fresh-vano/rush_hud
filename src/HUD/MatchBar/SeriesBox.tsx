@@ -12,7 +12,6 @@ export default class SeriesBox extends React.Component<Props> {
   render() {
     const { match, map } = this.props;
     const amountOfMaps = (match && Math.floor(Number(match.matchType.substr(-1)) / 2) + 1) || 0;
-    const bo = (match && Number(match.matchType.substr(-1))) || 0;
     const left = map.team_ct.orientation === "left" ? map.team_ct : map.team_t;
     const right = map.team_ct.orientation === "left" ? map.team_t : map.team_ct;
     return (

@@ -2,16 +2,16 @@ import React from "react";
 
 import { Timer } from "../MatchBar/MatchBar";
 import { Player } from "csgogsi";
-import * as I from "./../../assets/Icons";
 
 interface IProps {
   timer: Timer | null;
   side: "right" | "left"
+  show: boolean;
 }
 
 export default class Bomb extends React.Component<IProps> {
   getCaption = (type: "defusing" | "planting", player: Player | null) => {
-    if(!player) return null;
+    if(!player||this.props.show) return null;
     if(type === "defusing"){
       return <>
         <div className={'CT'}>{player.name} is defusing</div>

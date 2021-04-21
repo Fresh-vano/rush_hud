@@ -1,11 +1,5 @@
 import React from 'react';
 
-class LossBox extends React.PureComponent<{ active: boolean, side: 'CT' | 'T' }>{
-    render(){
-        return <div className={`loss-box ${this.props.side} ${this.props.active ? 'active':''}`}></div>
-    }
-}
-
 interface Props {
     side: 'left' | 'right',
     team: 'CT' | 'T',

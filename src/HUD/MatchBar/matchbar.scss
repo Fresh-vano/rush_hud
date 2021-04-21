@@ -19,15 +19,6 @@
 		-webkit-transform: translate3d(-100%, 0, 0);
 		transform: translate3d(-100%, 0, 0);
 	}
-	/*from {
-	  opacity: 1;
-	}
-  
-	to {
-	  opacity: 0;
-	  -webkit-transform: translate3d(0, 100%, 0);
-	  transform: translate3d(0, 100%, 0);
-	}*/
 }
 
 @keyframes round_timer{
@@ -53,7 +44,6 @@
 	left: 50%;
 	transform: translateX(-50%);
 	opacity: 0.8;
-	//display: flex;
 	.CT {
 		color: var(--color-new-ct);
 	}
@@ -119,11 +109,12 @@
 		font-size: 28px;
 		font-weight: bold;
 		color: var(--white-full);
+		animation: none;
         &.hide {
             display: none;
         }
 		&.freezetime{
-			animation: round_timer 1s infinite;
+			animation: round_timer 1s 10;
 		}
 	}
 	#round_now {
@@ -311,7 +302,7 @@
 			}
 		}
 	}
-	.bar {
+	/*.bar {
 		display: flex;
 		flex-direction: row;
 		width: 10px;
@@ -322,7 +313,7 @@
         &.T {
             background-color: var(--color-new-t);
         }
-	}
+	}*/
 
 }
 .alert{
@@ -340,7 +331,7 @@
 	}
 	&.show{
 		opacity: 1;
-		animation: fadeOutDown 10s linear 1;
+		animation: fadeOutDown 8s linear 1;
 		animation-fill-mode: forwards;
 		display: flex;
 	}
@@ -358,13 +349,11 @@
 			float: left;
 			text-align: left;
 			left: 20px;
-			//left: calc(50% + 71px);		
 		}
 		&.left {
 			float: right;
 			right: 20px;
 			text-align: right;
-			//right: calc(50% + 71px);
 		}
 	}
 }

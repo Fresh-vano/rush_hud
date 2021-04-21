@@ -174,8 +174,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
     const left = map.team_ct.orientation === "left" ? map.team_ct : map.team_t;
     const right = map.team_ct.orientation === "left" ? map.team_t : map.team_ct;
     const isPlanted = bomb && (bomb.state === "defusing" || bomb.state === "planted");
-    const bo = (match && Number(match.matchType.substr(-1))) || 0;
-    const amountOfMaps = (match && Math.floor(Number(match.matchType.substr(-1)) / 2) + 1) || 0;
+    //const bo = (match && Number(match.matchType.substr(-1))) || 0;
     let leftTimer: Timer | null = null, rightTimer: Timer | null = null;
     let time10: number = +time.substring(2);
     if(defusing.active || planting.active){
@@ -198,7 +197,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
             </div>
             <div className={`score left ${left.side}`}>{left.score}</div>
           </div>
-          <div id="timer" className={bo === 0 ? 'no-bo' : ''}>
+          <div id="timer">
             <div className={`round_timer_text ${isFreezetime&&time10<=10 ? 'freezetime':''} ${isPlanted ? "hide":""}`}>{time}</div>
             <div id="round_now" className={isPlanted ? "hide":""}>{this.getRoundLabel()}</div>
             <Bomb />

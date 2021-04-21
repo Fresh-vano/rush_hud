@@ -75,8 +75,6 @@ export default class Layout extends React.Component<Props, State> {
     const rightPlayers = game.players.filter(player => player.team.side === right.side);
     const isFreezetime = (game.round && game.round.phase === "freezetime") || game.phase_countdowns.phase === "freezetime";
     const { forceHide } = this.state;
-    const kill_left = 5;
-    //if(kill_left==5)
 
     return (
       <div className="layout">
@@ -103,8 +101,8 @@ export default class Layout extends React.Component<Props, State> {
 
         <Observed player={game.player} veto={this.getVeto()} round={game.map.round+1}/>
 
-        <TeamBox team={left} players={leftPlayers} side="left" current={game.player} isFreezetime={isFreezetime} />
-        <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} />
+        <TeamBox team={left} players={leftPlayers} side="left" current={game.player} isFreezetime={isFreezetime} map={game.map}/>
+        <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} map={game.map}/>
 
         <Trivia />
 

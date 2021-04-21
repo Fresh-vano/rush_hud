@@ -4,7 +4,6 @@ import WinIndicator from "./WinIndicator";
 import { Timer } from "./MatchBar";
 import TeamLogo from './TeamLogo';
 import PlantDefuse from "../Timers/PlantDefuse"
-import { Match } from "../../api/interfaces";
 
 interface IProps {
   team: I.Team;
@@ -21,7 +20,7 @@ export default class TeamScore extends React.Component<IProps> {
         <div className={`team ${orientation} ${team.side}`}>
           <TeamLogo team={team} />
           <div className="team-name">{team.name}</div>
-          <PlantDefuse timer={timer} side={orientation} />
+          <PlantDefuse timer={timer} side={orientation} show={showWin} />
           <WinIndicator team={team} show={showWin}/>
         </div>
       </>
