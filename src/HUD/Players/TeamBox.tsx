@@ -14,24 +14,35 @@ interface Props {
 
 export default class TeamBox extends React.Component<Props> {
   top_player(id: string):boolean {
-    var max_kill_left= 0, index_left='', index_right='',max_kill_right= 0;
-    this.props.players.map(Player => {
+    var max_kill_left= 0, index_left='', index_right='',max_kill_right= 0, dead_left=0, dead_right=0;
+    this.props.players.forEach(Player => {
       if(Player.team.side==="CT")
         if(Player.stats.kills>max_kill_left){
           max_kill_left=Player.stats.kills;
+          dead_left=Player.stats.deaths;
           index_left = Player.steamid;
         }
       if(Player.team.side==="T"){
         if(Player.stats.kills>max_kill_right){
           max_kill_right=Player.stats.kills;
+          dead_right=Player.stats.deaths;
           index_right = Player.steamid;
         }
       }
     });{
-      if(max_kill_left>max_kill_right)
+      if(max_kill_left<max_kill_right)
         if(id===index_left)
           return true;
-      else 
+      else if(max_kill_left===max_kill_right){
+        if(dead_left>dead_right)
+          if(id===index_right){
+            return true;
+          }
+        else
+          if(id===index_left)
+            return true;
+      }
+      else
         if(id===index_right)
           return true;
       return false;

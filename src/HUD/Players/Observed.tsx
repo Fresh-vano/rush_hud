@@ -58,7 +58,8 @@ export default class Observed extends React.Component<{ player: Player | null, v
 						<div className="obs_bullets_section"><Bullets /></div>
 						<div className="obs_ammo_section">
 							<div className="obs_clip">{(currentWeapon && currentWeapon.ammo_clip) || "-"}</div>
-							<div className="obs_reserve">/{(currentWeapon && currentWeapon.ammo_reserve) || "-"}</div>
+							<div className="obs_mid">/</div>
+							<div className="obs_reserve">{(currentWeapon && currentWeapon.ammo_reserve) || "-"}</div>
 						</div>
 					</div>
 					<div className="lane3_right">

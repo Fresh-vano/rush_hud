@@ -30,7 +30,7 @@ export default class PlayerBox extends React.Component<IProps> {
         <div className="player_data">
           <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
           <div className={`glow ${"left"} ${top_player ? "TOP" : ""}`}></div>
-          <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}%)` }}></div>
+          <div className={`hp_bar`} style={{ background:`linear-gradient(to left, rgba(0,0,0,0) ${100-player.state.health}%, ${player.team.side==="T" ? `var(--color-new-t)`:`var(--color-new-ct)`} ${100-player.state.health}%` }}></div>
           <div className="player_section_top">
             <div className="health">{player.state.health}</div>
             <div className="username"><div>{player.name}</div>
@@ -76,7 +76,7 @@ export default class PlayerBox extends React.Component<IProps> {
           <div className="player_data">
             <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
             <div className={`glow ${"right"} ${top_player ? "TOP" : ""}`}></div>
-            <div className={`hp_bar`} style={{ width: `calc( ${player.state.health}%)` }}></div>
+            <div className={`hp_bar`} style={{ background:`linear-gradient(to right, rgba(0,0,0,0) ${100-player.state.health}%, ${player.team.side==="T" ? `var(--color-new-t)`:`var(--color-new-ct)`} ${100-player.state.health}%` }}></div>
             <div className="player_section_top">
               <div className="health">{player.state.health}</div>
               <div className="username"><div>{player.name}</div>

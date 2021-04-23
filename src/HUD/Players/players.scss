@@ -17,7 +17,7 @@
     flex-direction: column;
     opacity: 1;
     transition: opacity 0.75s;
-    width: 585px;
+    width: 387px;
     height: 425px;
     &.CT {
         .player .hp_bar, .player .player_kill_background {
@@ -243,7 +243,7 @@
         }
     }  
     .player {
-        width: 585px;
+        width: 387px;
         height: 80px;
         position: relative;
         margin-bottom: 5px;
@@ -295,26 +295,23 @@
                 }
                 &.TOP{
                     //color: rgb(255,74,0);
-                    box-shadow: 0 0 20px #faca0a;
+                    box-shadow: 0 0 30px #fa0a0a;
                     //color: #faca0a;
                     opacity: 1;
                     //animation: glow 12s;
                 }
             }
             .hp_bar {
-                max-width: 305px;
+                width: 305px;
                 height: 25px;
                 position: absolute;
                 z-index: 1;
-                &.CT {
+                /*&.CT {
                     background-color: var(--color-new-ct);
                 }
                 &.T {
                     background-color: var(--color-new-t);
-                }
-                &.low {
-                background-color: red;
-                }
+                }*/
             }
             .player_section_top{
                 width: 305px;
