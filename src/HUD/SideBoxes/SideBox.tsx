@@ -45,5 +45,4 @@ export default class SideBox extends React.Component<{ side: 'left' | 'right', h
             </div>
 		);
 	}
-
 }

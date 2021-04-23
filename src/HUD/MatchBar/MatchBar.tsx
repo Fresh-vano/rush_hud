@@ -169,7 +169,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
   }
   render() {
     const { defusing, planting, winState } = this.state;
-    const { bomb, match, map, phase, isFreezetime } = this.props;
+    const { bomb, map, phase, isFreezetime } = this.props;
     const time = stringToClock(phase.phase_ends_in);
     const left = map.team_ct.orientation === "left" ? map.team_ct : map.team_t;
     const right = map.team_ct.orientation === "left" ? map.team_t : map.team_ct;

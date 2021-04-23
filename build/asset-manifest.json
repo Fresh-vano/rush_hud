@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.821653ea.chunk.css",
-    "main.js": "./static/js/main.80cc548c.chunk.js",
+    "main.css": "./static/css/main.26f35951.chunk.css",
+    "main.js": "./static/js/main.e27ab2b1.chunk.js",
     "runtime-main.js": "./static/js/runtime-main.d824be29.js",
     "static/js/2.93ce3452.chunk.js": "./static/js/2.93ce3452.chunk.js",
     "index.html": "./index.html",
@@ -14,7 +14,6 @@
     "static/media/bizon.a9df2b60.svg": "./static/media/bizon.a9df2b60.svg",
     "static/media/bomb.095747e6.svg": "./static/media/bomb.095747e6.svg",
     "static/media/c4.be141b3d.svg": "./static/media/c4.be141b3d.svg",
-    "static/media/observed.scss": "./static/media/oblozhka5.7fa204e8.png",
     "static/media/cz75a.b02e4749.svg": "./static/media/cz75a.b02e4749.svg",
     "static/media/deagle.5ab6a64c.svg": "./static/media/deagle.5ab6a64c.svg",
     "static/media/decoy.8a638839.svg": "./static/media/decoy.8a638839.svg",
@@ -28,11 +27,11 @@
     "static/media/headshot.8ba7ccfe.png": "./static/media/headshot.8ba7ccfe.png",
     "static/media/hegrenade.e0c4cb29.svg": "./static/media/hegrenade.e0c4cb29.svg",
     "static/media/hkp2000.e863a2d5.svg": "./static/media/hkp2000.e863a2d5.svg",
-    "static/media/icon_armor_full_default.00c0034f.svg": "./static/media/icon_armor_full_default.00c0034f.svg",
-    "static/media/icon_armor_half_default.00c0034f.svg": "./static/media/icon_armor_half_default.00c0034f.svg",
-    "static/media/icon_armor_half_helmet_default.863c5b40.svg": "./static/media/icon_armor_half_helmet_default.863c5b40.svg",
-    "static/media/icon_armor_helmet_default.863c5b40.svg": "./static/media/icon_armor_helmet_default.863c5b40.svg",
-    "static/media/icon_armor_none_default.00c0034f.svg": "./static/media/icon_armor_none_default.00c0034f.svg",
+    "static/media/icon_armor_full_default.571fe4fd.svg": "./static/media/icon_armor_full_default.571fe4fd.svg",
+    "static/media/icon_armor_half_default.571fe4fd.svg": "./static/media/icon_armor_half_default.571fe4fd.svg",
+    "static/media/icon_armor_half_helmet_default.f4e88ff4.svg": "./static/media/icon_armor_half_helmet_default.f4e88ff4.svg",
+    "static/media/icon_armor_helmet_default.de28741d.svg": "./static/media/icon_armor_helmet_default.de28741d.svg",
+    "static/media/icon_armor_none_default.571fe4fd.svg": "./static/media/icon_armor_none_default.571fe4fd.svg",
     "static/media/icon_blind.2ff196b5.svg": "./static/media/icon_blind.2ff196b5.svg",
     "static/media/icon_bomb_default.dd1ea911.svg": "./static/media/icon_bomb_default.dd1ea911.svg",
     "static/media/icon_bomb_explosion_default.70871044.svg": "./static/media/icon_bomb_explosion_default.70871044.svg",
@@ -84,6 +83,7 @@
     "static/media/mp9.305f09bc.svg": "./static/media/mp9.305f09bc.svg",
     "static/media/negev.4fa45d24.svg": "./static/media/negev.4fa45d24.svg",
     "static/media/nova.b1ebc5ec.svg": "./static/media/nova.b1ebc5ec.svg",
+    "static/media/observed.scss": "./static/media/oblozhka5.7fa204e8.png",
     "static/media/out.0f039f2c.svg": "./static/media/out.0f039f2c.svg",
     "static/media/p250.5ea2e3f4.svg": "./static/media/p250.5ea2e3f4.svg",
     "static/media/p90.d7cf3f3c.svg": "./static/media/p90.d7cf3f3c.svg",
@@ -113,7 +113,7 @@
   "entrypoints": [
     "static/js/runtime-main.d824be29.js",
     "static/js/2.93ce3452.chunk.js",
-    "static/css/main.821653ea.chunk.css",
-    "static/js/main.80cc548c.chunk.js"
+    "static/css/main.26f35951.chunk.css",
+    "static/js/main.e27ab2b1.chunk.js"
   ]
 }
