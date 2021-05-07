@@ -11,7 +11,7 @@ interface IProps {
   player: Player,
   isObserved: boolean,
   isFreezetime: boolean,
-  top_player:boolean;
+  top_player:string;
 }
 
 export default class PlayerBox extends React.Component<IProps> {
@@ -26,10 +26,10 @@ export default class PlayerBox extends React.Component<IProps> {
     const top_player = this.props.top_player;
     if(isLeft){
     return (
-      <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
+      <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active_left' : ''}`}>
         <div className="player_data">
           <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
-          <div className={`glow ${"left"} ${top_player ? "TOP" : ""}`}></div>
+          <div className={`glow ${"left"} ${top_player === player.steamid ? "TOP" : ""}`}></div>
           <div className={`hp_bar`} style={{ background:`linear-gradient(to left, rgba(0,0,0,0) ${100-player.state.health}%, ${player.team.side==="T" ? `var(--color-new-t)`:`var(--color-new-ct)`} ${100-player.state.health}%` }}></div>
           <div className="player_section_top">
             <div className="health">{player.state.health}</div>
@@ -72,10 +72,10 @@ export default class PlayerBox extends React.Component<IProps> {
     }
     else{
       return (
-        <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
+        <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active_right' : ''}`}>
           <div className="player_data">
             <Avatar steamid={player.steamid} height={80} width={80} showSkull={false}/>
-            <div className={`glow ${"right"} ${top_player ? "TOP" : ""}`}></div>
+            <div className={`glow ${"right"} ${top_player === player.steamid ? "TOP" : ""}`}></div>
             <div className={`hp_bar`} style={{ background:`linear-gradient(to right, rgba(0,0,0,0) ${100-player.state.health}%, ${player.team.side==="T" ? `var(--color-new-t)`:`var(--color-new-ct)`} ${100-player.state.health}%` }}></div>
             <div className="player_section_top">
               <div className="health">{player.state.health}</div>

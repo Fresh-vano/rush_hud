@@ -247,9 +247,18 @@
         height: 80px;
         position: relative;
         margin-bottom: 5px;
-        &.active {
+        &.active_left {
             .player_data {
-                border-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                z-index: 2;
+                border: 2px solid white;
+            }
+        }
+        &.active_right{
+            .player_data{
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
                 z-index: 2;
                 border: 2px solid white;
             }
@@ -295,7 +304,8 @@
                 }
                 &.TOP{
                     //color: rgb(255,74,0);
-                    box-shadow: 0 0 30px #fa0a0a;
+                    //box-shadow: 0 0 30px #fa0a0a;
+                    box-shadow: 0px 0px 30px 15px rgb(255, 247, 0);;
                     //color: #faca0a;
                     opacity: 1;
                     //animation: glow 12s;

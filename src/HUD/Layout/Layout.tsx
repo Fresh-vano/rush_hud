@@ -17,6 +17,7 @@ import Overview from "../Overview/Overview";
 import Tournament from "../Tournament/Tournament";
 import Pause from "../PauseTimeout/Pause";
 import Timeout from "../PauseTimeout/Timeout";
+import LastRound from "../PauseTimeout/LastRound"
 
 interface Props {
   game: CSGO,
@@ -66,11 +67,55 @@ export default class Layout extends React.Component<Props, State> {
     return veto;
   }
 
+  top_player():string {
+    const { game } = this.props;
+    const isFreezetime = (game.round && game.round.phase === "freezetime") || game.phase_countdowns.phase === "freezetime";
+    if(game.map.round+1<5||!isFreezetime)
+      return '';
+    const left = game.map.team_ct.orientation === "left" ? game.map.team_ct : game.map.team_t;
+    const right = game.map.team_ct.orientation === "left" ? game.map.team_t : game.map.team_ct;
+    var max_kill_left= 0, index_left='', index_right='',max_kill_right= 0, dead_left=0, dead_right=0;
+    const leftPlayers = game.players.filter(player => player.team.side === left.side);
+    const rightPlayers = game.players.filter(player => player.team.side === right.side);
+    leftPlayers.forEach(player => {
+      if(player.stats.kills>max_kill_left){
+        max_kill_left=player.stats.kills;
+        dead_left=player.stats.deaths;
+        index_left = player.steamid;
+      }
+      else if(player.stats.deaths<=dead_left){
+        max_kill_left=player.stats.kills;
+        dead_left=player.stats.deaths;
+        index_left = player.steamid;
+      }
+    });
+    rightPlayers.forEach(player => {
+      if(player.stats.kills>max_kill_right){
+        max_kill_right=player.stats.kills;
+        dead_right=player.stats.deaths;
+        index_right = player.steamid;
+      }
+      else if(player.stats.deaths<=dead_right){
+        max_kill_right=player.stats.kills;
+        dead_right=player.stats.deaths;
+        index_right = player.steamid;
+      }
+    });
+    if(max_kill_left>max_kill_right)
+      return  index_left;
+    else if(max_kill_left===max_kill_right)
+      if(dead_left<dead_right)
+        return index_left;
+      else
+        return index_right;
+    else
+      return index_right;
+  }
+
   render() {
     const { game, match } = this.props;
     const left = game.map.team_ct.orientation === "left" ? game.map.team_ct : game.map.team_t;
     const right = game.map.team_ct.orientation === "left" ? game.map.team_t : game.map.team_ct;
-
     const leftPlayers = game.players.filter(player => player.team.side === left.side);
     const rightPlayers = game.players.filter(player => player.team.side === right.side);
     const isFreezetime = (game.round && game.round.phase === "freezetime") || game.phase_countdowns.phase === "freezetime";
@@ -95,14 +140,15 @@ export default class Layout extends React.Component<Props, State> {
         <MatchBar map={game.map} phase={game.phase_countdowns} bomb={game.bomb} match={match} isFreezetime={isFreezetime} />
         <Pause  phase={game.phase_countdowns}/>
         <Timeout map={game.map} phase={game.phase_countdowns} />
+        <LastRound map={game.map} isFreezetime={isFreezetime}/>
         <SeriesBox map={game.map} phase={game.phase_countdowns} match={match} />
 
         <Tournament />
 
         <Observed player={game.player} veto={this.getVeto()} round={game.map.round+1}/>
 
-        <TeamBox team={left} players={leftPlayers} side="left" current={game.player} isFreezetime={isFreezetime} map={game.map}/>
-        <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} map={game.map}/>
+        <TeamBox team={left} players={leftPlayers} side="left" current={game.player} isFreezetime={isFreezetime} map={game.map} top={this.top_player()}/>
+        <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} map={game.map} top={this.top_player()}/>
 
         <Trivia />
 

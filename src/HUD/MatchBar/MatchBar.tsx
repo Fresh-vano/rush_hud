@@ -6,6 +6,7 @@ import Bomb from "./../Timers/BombTimer";
 import Countdown from "./../Timers/Countdown";
 import { GSI } from "../../App";
 import { Match } from "../../api/interfaces";
+import { Timer } from "../../assets/Icons";
 
 function stringToClock(time: string | number, pad = true) {
   if (typeof time === "string") {

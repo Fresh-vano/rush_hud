@@ -129,10 +129,10 @@
 	//align-items: center;
 	transition: opacity 1.5s;
 	opacity: 0;
-}/*
-#pause {
+}
+#last_round {
 	position: fixed;
-	width: 320px;
+	width: 400px;
 	height: 40px;
 	top: 130px;
 	left: 50%;
@@ -141,15 +141,17 @@
 	background-color: var(--blue);
 	font-family: "Arial", sans-serif;
 	text-align: center;
-	vertical-align: text-bottom;
-	line-height: 46px;
+	vertical-align: middle;
+	line-height: 40px;
 	font-size: 18px;
 	font-weight: normal;
-
-	//align-items: center;
-	transition: opacity 1.5s;
+	color: white;
 	opacity: 0;
-}*/
+}
+#last_round.show{
+	animation: lastround 3s;
+}
+
 #timeout.show, #pause.show {
 	opacity: 0.8;
 }
@@ -158,4 +160,19 @@
 }
 #timeout.ct {
 	color: var(--white-full);
+}
+
+@keyframes lastround{
+	0%{
+		opacity: 0;
+	}
+	10%{
+		opacity: 0.8;
+	}
+	90%{
+		opacity: 0.8;
+	}
+	100%{
+		opacity: 0;
+	}
 }
