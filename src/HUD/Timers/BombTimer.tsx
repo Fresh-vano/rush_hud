@@ -1,24 +1,25 @@
 import React from "react";
-
 import { GSI } from "./../../App";
 import BombTimer from "./Countdown";
 import { C4 } from "./../../assets/Icons";
 
-export default class Bomb extends React.Component<any, { height: number; show: boolean }> {
+export default class Bomb extends React.Component<any, { width: number; show: boolean; }> {
   constructor(props: any) {
     super(props);
     this.state = {
-      height: 0,
+      width: 0,
       show: false
     };
   }
+  
+  
   hide = () => {
-    this.setState({ show: false, height: 100 });
+    this.setState({ show: false, width: 10 });
   };
   componentDidMount() {
     const bomb = new BombTimer(time => {
-      let height = time > 40 ? 4000 : time * 100;
-      this.setState({ height: height / 40 });
+      let width = time > 40 ? 4000 : time * 100;
+      this.setState({ width: width / 40 });
     });
     bomb.onReset(this.hide);
     GSI.on("data", data => {
@@ -37,9 +38,10 @@ export default class Bomb extends React.Component<any, { height: number; show: b
   }
 
   render() {
+    const { timer } = this.props;
     return (
       <div id={`bomb_container`}>
-        <div className={`bomb_timer ${this.state.show ? "show" : "hide"}`} style={{ height: `${this.state.height}%` }}></div>
+        <div className={`bomb_timer ${this.state.show ? "show" : "hide"}`} style={{ width: `${this.state.width}%` }}></div>
         <div className={`bomb_icon ${this.state.show ? "show" : "hide"}`}>
           <C4 fill="white" />
         </div>
