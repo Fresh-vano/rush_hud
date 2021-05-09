@@ -103,13 +103,14 @@ export default class Layout extends React.Component<Props, State> {
     });
     if(max_kill_left>max_kill_right)
       return  index_left;
-    else if(max_kill_left===max_kill_right)
-      if(dead_left<dead_right)
-        return index_left;
+    else 
+      if(max_kill_left===max_kill_right)
+        if(dead_left<dead_right)
+          return index_left;
+        else
+          return index_right;
       else
         return index_right;
-    else
-      return index_right;
   }
 
   render() {
