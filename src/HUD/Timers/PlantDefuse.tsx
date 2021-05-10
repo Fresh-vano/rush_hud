@@ -2,6 +2,7 @@ import React from "react";
 
 import { Timer } from "../MatchBar/MatchBar";
 import { Player } from "csgogsi";
+import { type } from "os";
 
 interface IProps {
   timer: Timer | null;
@@ -24,6 +25,7 @@ export default class Bomb extends React.Component<IProps> {
   render() {
     const { side, timer } = this.props;
     return (
+      <>
       <div className={`defuse_plant_container ${side} ${timer && timer.active ? 'show' :'hide'}`}>
         {
           timer ?
@@ -31,9 +33,10 @@ export default class Bomb extends React.Component<IProps> {
             {this.getCaption(timer.type, timer.player)}
           </div> : null
         }
-          
           <div className="defuse_plant_bar"></div>
+        <div className={`defuse_timer ${timer && timer.type==="defusing" ? 'CT' : 'T'}`} style={{ width: `${(timer && timer.width) || 0}%`}}></div>
       </div>
+      </>
     );
   }
 }
