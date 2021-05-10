@@ -34,8 +34,8 @@ export default class Bomb extends React.Component<IProps> {
           </div> : null
         }
           <div className="defuse_plant_bar"></div>
+        <div className={`defuse_timer ${timer && timer.type==="defusing" ? 'CT' : 'T'}`} style={{ width: `${(timer && timer.width) || 0}%`}}></div>
       </div>
-      <div className={`defuse_timer ${timer && timer.type==="defusing" ? 'CT' : 'T'}`} style={{ width: `${(timer && timer.width) || 0}%`}}></div>
       </>
     );
   }
