@@ -193,8 +193,8 @@ export default class TeamBox extends React.Component<IProps, IState> {
           <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} />
           <div className={`score_section_left ${left.side}`}>
             <div className="best_of">
-              <div className={`block1 ${left.matches_won_this_series===1 ? "win" : ""}`}></div>
               <div className={`block2 ${left.matches_won_this_series===2 ? "win" : ""}`}></div>
+              <div className={`block1 ${left.matches_won_this_series===1 ? "win" : ""}`}></div>
             </div>
             <div className={`score left ${left.side}`}>{left.score}</div>
           </div>
@@ -206,8 +206,8 @@ export default class TeamBox extends React.Component<IProps, IState> {
           <TeamScore team={right} orientation={"right"} timer={rightTimer} showWin={winState.show && winState.side === "right"} />
           <div className={`score_section_right ${right.side}`}>
             <div className="best_of">
-              <div className={`block1 ${right.matches_won_this_series===2 ? "win" : ""}`}></div>
               <div className={`block2 ${right.matches_won_this_series===1 ? "win" : ""}`}></div>
+              <div className={`block1 ${right.matches_won_this_series===2 ? "win" : ""}`}></div>
             </div>
             <div className={`score right ${right.side}`}>{right.score}</div>
           </div>

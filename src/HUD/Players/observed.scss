@@ -434,6 +434,39 @@
     }
 }
 
+/*.league_box{
+    height: 50px;
+    width: 1000px;
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    opacity: 0.75;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, rgba(57, 13, 151,1) 10%, rgba(99, 29, 207,1) 90%, rgba(2,16,42,0) 100%);
+    filter: blur(px);
+    .league_box_img_1,
+    .league_box_img_2,
+    .league_box_img_3{
+        height:40px;
+        width: 270px;
+        //background-image: url('./../../assets/oblozhka5.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position:center;
+        max-width: 280px;
+        margin-top:5px;
+        border: dashed;
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+        float: left;
+    }
+    .league_box_img_1{
+        margin-left: 60px;
+    }
+}*/
+
 #cameraFeed {
     width: 100px;
     height: 100px;

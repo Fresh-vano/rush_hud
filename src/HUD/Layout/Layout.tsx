@@ -19,6 +19,7 @@ import Pause from "../PauseTimeout/Pause";
 import Timeout from "../PauseTimeout/Timeout";
 import LastRound from "../PauseTimeout/LastRound"
 
+
 interface Props {
   game: CSGO,
   match: Match | null
@@ -125,7 +126,10 @@ export default class Layout extends React.Component<Props, State> {
     return (
       <div className="layout">
         <div className="league_box">
-          <div className="league_box_img"></div>
+        <div className="league_box_img"></div>
+          <div className="league_box_img_1"></div>
+          <div className="league_box_img_2"></div>
+          <div className="league_box_img_3"></div>
         </div>
         <div className={`players_alive`}>
           <div className="title_container">Players alive</div>
@@ -152,6 +156,8 @@ export default class Layout extends React.Component<Props, State> {
         <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} map={game.map} top={this.top_player()}/>
 
         <Trivia />
+
+
 
         <MapSeries teams={[left, right]} match={match} isFreezetime={isFreezetime} map={game.map} />
         <div className={"boxes left"}>
