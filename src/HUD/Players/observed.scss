@@ -274,7 +274,6 @@
     .weapon.grenade {
         height: 28px;
         /*filter: invert(1);
-
         &:last-child {
             margin-right: 5px;
         }
@@ -282,14 +281,12 @@
     
     .stats_row {
         height: 28px;
-
         .stats_cell {
             height: 100%;
             width: 56px;
             display: flex;
             flex-direction: column;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-
             .label {
                 height: 13px;
                 display: flex;
@@ -298,7 +295,6 @@
                 font-size: 10px;
                 color: #b2b2b2;
             }
-
             .stat {
                 flex: 1;
                 display: flex;
@@ -381,8 +377,6 @@
             }
         }
     }
-
-
     .sidebar {
         width: 10px;
         height: 100%;

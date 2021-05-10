@@ -66,7 +66,7 @@ export default class PlayerOverview extends React.Component<IProps> {
                 <div className="player-overview-picture">
                     {url ? <img src={url} alt={`${player.username}'s avatar`}/> : null}
                 </div>
-                <div className="player-overview-username">{url && countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} className="flag" alt={countryName}/> : null }{player.username.toUpperCase()}</div>
+                <div className="player-overview-username">{player.username.toUpperCase()}</div>
 
                 <div className="player-overview-stats">
                     <div className="player-overview-stat">
