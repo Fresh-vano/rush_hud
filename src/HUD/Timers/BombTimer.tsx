@@ -38,12 +38,11 @@ export default class Bomb extends React.Component<any, { width: number; show: bo
   }
 
   render() {
-    const { timer } = this.props;
     return (
       <div id={`bomb_container`}>
         <div className={`bomb_timer ${this.state.show ? "show" : "hide"}`} style={{ width: `${this.state.width}%` }}></div>
-        <div className={`bomb_icon ${this.state.show ? "show" : "hide"}`}>
-          <C4 fill="red" />
+        <div className={`bomb_icon ${this.state.show ? "show" : "hide"} ${(this.state.width<=24 && this.state.width>10) && this.state.show? "slow":""} ${this.state.width<10 && this.state.show? "fast":""}`}>
+          <C4 fill="#e2a200"/>
         </div>
       </div>
     );
