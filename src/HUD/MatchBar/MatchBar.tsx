@@ -200,7 +200,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
           </div>
           <div id="timer">
             <div id="series_text">{ bo ? `Best of ${bo}` : '' }</div>
-            <div className={`round_timer_text ${isFreezetime && time10<=5 ? 'freezetime':''} ${isPlanted|| winState.show || phase.phase === "paused" ? "hide":""}`}>{time}</div>
+            <div className={`round_timer_text ${isFreezetime && time10<=5 ? 'freezetime':''} ${isPlanted|| winState.show ? "hide":""}`}>{time}</div>
             <div id="round_now" className={isPlanted ? "hide":""}>{this.getRoundLabel()}</div>
             <Bomb />
           </div>
