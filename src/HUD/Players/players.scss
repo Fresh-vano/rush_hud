@@ -10,6 +10,18 @@
     }
 }
 
+@keyframes bomb{
+    0%,48%{
+        fill:white;
+    }
+    50%{
+        fill: red;
+    }
+    52%,100%{
+        fill: white;
+    }
+}
+
 .teambox {
     position: fixed;
     bottom: 9px;
@@ -416,11 +428,19 @@
                     height: 18px;
                     position: absolute;
                     display: flex;
-                    .defuse_indicator, .armor_indicator{
+                    .defuse_indicator{
                         svg {
                             max-height: 20px;
                             height: 20px;
                             fill: white;
+                        }
+                    }
+                    .armor_indicator{
+                        svg {
+                            max-height: 20px;
+                            height: 20px;
+                            fill: white;
+                            animation: bomb 6s infinite;
                         }
                     }
                 }

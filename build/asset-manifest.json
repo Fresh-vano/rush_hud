@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.789c310a.chunk.css",
-    "main.js": "./static/js/main.79201961.chunk.js",
+    "main.css": "./static/css/main.33991205.chunk.css",
+    "main.js": "./static/js/main.8eb802a6.chunk.js",
     "runtime-main.js": "./static/js/runtime-main.d824be29.js",
     "static/js/2.10f71e39.chunk.js": "./static/js/2.10f71e39.chunk.js",
     "index.html": "./index.html",
@@ -9,7 +9,7 @@
     "static/media/index.css": "./static/media/Rounded_Elegance.f3a82079.ttf",
     "static/media/ak47.352c679d.svg": "./static/media/ak47.352c679d.svg",
     "static/media/aug.4186fc43.svg": "./static/media/aug.4186fc43.svg",
-    "static/media/awp.c4a63f88.svg": "./static/media/awp.c4a63f88.svg",
+    "static/media/awp.9e9bef55.svg": "./static/media/awp.9e9bef55.svg",
     "static/media/bayonet.df5f0394.svg": "./static/media/bayonet.df5f0394.svg",
     "static/media/bizon.a9df2b60.svg": "./static/media/bizon.a9df2b60.svg",
     "static/media/bomb.095747e6.svg": "./static/media/bomb.095747e6.svg",
@@ -113,7 +113,7 @@
   "entrypoints": [
     "static/js/runtime-main.d824be29.js",
     "static/js/2.10f71e39.chunk.js",
-    "static/css/main.789c310a.chunk.css",
-    "static/js/main.79201961.chunk.js"
+    "static/css/main.33991205.chunk.css",
+    "static/js/main.8eb802a6.chunk.js"
   ]
 }
