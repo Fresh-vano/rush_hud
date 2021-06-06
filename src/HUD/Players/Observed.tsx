@@ -4,6 +4,8 @@ import Weapon from "./../Weapon/Weapon";
 import Avatar from "./Avatar";
 //import TeamLogo from "./../MatchBar/TeamLogo";
 import "./observed.scss";
+import { apiUrl } from './../../api/api';
+import { getCountry } from "./../countries"
 import { ArmorHelmet, ArmorFull, HealthFull, Bullets } from './../../assets/Icons';
 import { Veto } from "../../api/interfaces";
 
@@ -17,10 +19,12 @@ export default class Observed extends React.Component<{ player: Player | null, v
 	render() {
 		if (!this.props.player) return '';
 		const { player } = this.props;
+		const country = player.country || player.team.country;
 		const weapons = Object.values(player.weapons).map(weapon => ({ ...weapon, name: weapon.name.replace("weapon_", "") }));
 		const currentWeapon = weapons.filter(weapon => weapon.state === "active")[0];
 		const grenades = weapons.filter(weapon => weapon.type === "Grenade");
 		const { stats } = player;
+		var countryName = country ? getCountry(country) : null;
 		//const ratio = stats.deaths === 0 ? stats.kills : stats.kills / stats.deaths;
 
 		return (
@@ -28,9 +32,10 @@ export default class Observed extends React.Component<{ player: Player | null, v
 				<Avatar steamid={player.steamid} height={100} width={100} showCam={true} slot={player.observer_slot}/>
 				<div className="obs_lane1 ">
 					<div className="line1_left">
-							<div className="obs_alias">
-								<div className="obs_alias_text">{player.name}</div>
-							</div>
+						<div className="flag">{countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} alt={countryName} /> : ''}</div>
+						<div className="obs_alias">
+							<div className="obs_alias_text">{player.name}</div>
+						</div>
 					</div>
 					<div className="line1_right">
 						<div className="obs_health_section">

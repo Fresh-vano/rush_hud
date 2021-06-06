@@ -52,7 +52,7 @@ export default class PlayerOverview extends React.Component<IProps> {
         const data = this.getData();
         if(!player || !veto || !veto.rounds || !data) return null;
         let url = null;
-        // const avatarData = avatars.find(avatar => avatar.steamid === player.steamid);
+        //const avatarData = avatars.find(avatar => avatar.steamid === player.steamid);
         const avatarData = avatars[player.steamid];
         if(avatarData && avatarData.url){
             url = avatarData.url;
@@ -66,8 +66,7 @@ export default class PlayerOverview extends React.Component<IProps> {
                 <div className="player-overview-picture">
                     {url ? <img src={url} alt={`${player.username}'s avatar`}/> : null}
                 </div>
-                <div className="player-overview-username">{player.username.toUpperCase()}</div>
-
+                <div className="player-overview-username">{url && countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} className="flag" alt={countryName}/> : null }{player.username.toUpperCase()}</div>
                 <div className="player-overview-stats">
                     <div className="player-overview-stat">
                         <div className="label">KILLS: {data.kills}</div>

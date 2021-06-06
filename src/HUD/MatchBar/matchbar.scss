@@ -71,10 +71,10 @@
 			border-bottom-right-radius: 10px;
 			animation: none;
 			transition: height 1s;
-			&.left{
+			&.CT{
 				background-color: var(--color-new-ct);
 			}
-			&.right{
+			&.T{
 				background-color: var(--color-new-t);
 			}
 			&.show{

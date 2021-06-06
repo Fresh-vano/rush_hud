@@ -2,7 +2,6 @@ import React from "react";
 
 import { Timer } from "../MatchBar/MatchBar";
 import { Player } from "csgogsi";
-import { type } from "os";
 
 interface IProps {
   timer: Timer | null;

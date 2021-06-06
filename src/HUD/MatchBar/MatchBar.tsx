@@ -199,7 +199,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
             <div className={`score left ${left.side}`}>{left.score}</div>
           </div>
           <div className={`timer ${winState.show ? "win" : ""}`}>
-            <div className={`WinIndicator ${winState.show ? "show" : ""} ${winState.side === "right" ? "right" : "left"}`}>
+            <div className={`WinIndicator ${winState.show ? "show" : ""} ${winState.side === "right" ? `${right.side}` : `${left.side}`}`}>
               <div id="win_team">{winState.side === "right" ? right.name : left.name}</div>
               <div id="Win">WINS</div>
               <div id="under_line">the round</div>
