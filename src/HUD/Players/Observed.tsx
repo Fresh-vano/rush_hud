@@ -32,7 +32,6 @@ export default class Observed extends React.Component<{ player: Player | null, v
 				<Avatar steamid={player.steamid} height={100} width={100} showCam={true} slot={player.observer_slot}/>
 				<div className="obs_lane1 ">
 					<div className="line1_left">
-						<div className="flag">{countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} alt={countryName} /> : ''}</div>
 						<div className="obs_alias">
 							<div className="obs_alias_text">{player.name}</div>
 						</div>
@@ -49,6 +48,7 @@ export default class Observed extends React.Component<{ player: Player | null, v
 					</div>
 				</div>
 				<div className="obs_lane2">
+					<div className="flag">{countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} alt={countryName} /> : ''}</div>
 					<div className="lane2_left">
 						<div className="kill"></div>
 						<div className="value">{stats.kills}</div>
