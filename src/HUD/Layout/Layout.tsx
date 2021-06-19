@@ -75,7 +75,7 @@ export default class Layout extends React.Component<Props, State> {
       return '';
     const left = game.map.team_ct.orientation === "left" ? game.map.team_ct : game.map.team_t;
     const right = game.map.team_ct.orientation === "left" ? game.map.team_t : game.map.team_ct;
-    var max_kill_left= 0, index_left='', index_right='',max_kill_right= 0, dead_left=0, dead_right=0;
+    let max_kill_left= 0, index_left="", index_right="",max_kill_right= 0, dead_left=0, dead_right=0;
     const leftPlayers = game.players.filter(player => player.team.side === left.side);
     const rightPlayers = game.players.filter(player => player.team.side === right.side);
     leftPlayers.forEach(player => {
@@ -84,7 +84,7 @@ export default class Layout extends React.Component<Props, State> {
         dead_left=player.stats.deaths;
         index_left = player.steamid;
       }
-      else if(player.stats.deaths<=dead_left){
+      else if(player.stats.deaths<=dead_left && player.stats.kills===max_kill_left){
         max_kill_left=player.stats.kills;
         dead_left=player.stats.deaths;
         index_left = player.steamid;
@@ -96,7 +96,7 @@ export default class Layout extends React.Component<Props, State> {
         dead_right=player.stats.deaths;
         index_right = player.steamid;
       }
-      else if(player.stats.deaths<=dead_right){
+      else if(player.stats.deaths<=dead_right && player.stats.kills===max_kill_right){
         max_kill_right=player.stats.kills;
         dead_right=player.stats.deaths;
         index_right = player.steamid;
