@@ -176,6 +176,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
     const right = map.team_ct.orientation === "left" ? map.team_t : map.team_ct;
     const isPlanted = bomb && (bomb.state === "defusing" || bomb.state === "planted");
     const bo = (match && Number(match.matchType.substr(-1))) || 0;
+    const amountOfMaps = (match && Math.floor(Number(match.matchType.substr(-1)) / 2) + 1) || 0;
     let leftTimer: Timer | null = null, rightTimer: Timer | null = null;
     let time10: number = +time.substring(2);
     if(defusing.active || planting.active){
@@ -193,8 +194,9 @@ export default class TeamBox extends React.Component<IProps, IState> {
           <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} />
           <div className={`score_section_left ${left.side}`}>
             <div className="best_of">
-              <div className={`block2 ${left.matches_won_this_series===2 ? "win" : ""}`}></div>
-              <div className={`block1 ${left.matches_won_this_series===1 ? "win" : ""}`}></div>
+              {new Array(amountOfMaps).fill(0).map((_, i) => (
+                <div key={i} className={`block ${left.matches_won_this_series > i ? "win" : ""}`} />
+              ))}
             </div>
             <div className={`score left ${left.side}`}>{left.score}</div>
           </div>
@@ -211,8 +213,9 @@ export default class TeamBox extends React.Component<IProps, IState> {
           <TeamScore team={right} orientation={"right"} timer={rightTimer} showWin={winState.show && winState.side === "right"} />
           <div className={`score_section_right ${right.side}`}>
             <div className="best_of">
-              <div className={`block2 ${right.matches_won_this_series===1 ? "win" : ""}`}></div>
-              <div className={`block1 ${right.matches_won_this_series===2 ? "win" : ""}`}></div>
+            {new Array(amountOfMaps).fill(0).map((_, i) => (
+                <div key={i} className={`block ${right.matches_won_this_series > i ? "win" : ""}`} />
+              ))}
             </div>
             <div className={`score right ${right.side}`}>{right.score}</div>
           </div>

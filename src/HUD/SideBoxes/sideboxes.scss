@@ -42,7 +42,6 @@
 	opacity: 1;
 	transition: all 0.75s;
 	background-color: var(--main);
-	//background-color: var(--sub-panel-color);
 	margin-bottom: 4px;
 	margin-top: 4px;
 	align-items: center;
@@ -200,32 +199,3 @@
 		}
 	}
 }
-/*
-.utilitybox.CT {
-	.title {
-		color: var(--color-new-ct);
-	}
-}
-.utilitybox.T {
-	.title {
-		color: var(--color-new-t);
-	}
-}
-.moneybox.right {
-	flex-direction: row-reverse;
-}
-
-.moneybox.CT {
-	.money_container {
-		.title {
-			color: var(--color-new-ct);
-		}
-	}
-}
-.moneybox.T {
-	.money_container {
-		.title {
-			color: var(--color-new-t);
-		}
-	}
-}*/

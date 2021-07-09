@@ -2,7 +2,6 @@ import React from "react";
 import { Player } from "csgogsi-socket";
 import Weapon from "./../Weapon/Weapon";
 import Avatar from "./Avatar";
-//import TeamLogo from "./../MatchBar/TeamLogo";
 import "./observed.scss";
 import { apiUrl } from './../../api/api';
 import { getCountry } from "./../countries"
@@ -25,7 +24,6 @@ export default class Observed extends React.Component<{ player: Player | null, v
 		const grenades = weapons.filter(weapon => weapon.type === "Grenade");
 		const { stats } = player;
 		var countryName = country ? getCountry(country) : null;
-		//const ratio = stats.deaths === 0 ? stats.kills : stats.kills / stats.deaths;
 
 		return (
 			<div className={`observed ${player.team.side}`}>

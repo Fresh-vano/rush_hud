@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "./static/css/main.4d1b0361.chunk.css",
-    "main.js": "./static/js/main.61bdf55d.chunk.js",
+    "main.css": "./static/css/main.61ccc07c.chunk.css",
+    "main.js": "./static/js/main.b1044f5e.chunk.js",
     "runtime-main.js": "./static/js/runtime-main.d824be29.js",
-    "static/js/2.10f71e39.chunk.js": "./static/js/2.10f71e39.chunk.js",
+    "static/js/2.30e6cd68.chunk.js": "./static/js/2.30e6cd68.chunk.js",
     "index.html": "./index.html",
-    "static/js/2.10f71e39.chunk.js.LICENSE.txt": "./static/js/2.10f71e39.chunk.js.LICENSE.txt",
+    "static/js/2.30e6cd68.chunk.js.LICENSE.txt": "./static/js/2.30e6cd68.chunk.js.LICENSE.txt",
     "static/media/index.css": "./static/media/Rounded_Elegance.f3a82079.ttf",
     "static/media/ak47.352c679d.svg": "./static/media/ak47.352c679d.svg",
     "static/media/aug.4186fc43.svg": "./static/media/aug.4186fc43.svg",
@@ -83,7 +83,6 @@
     "static/media/mp9.305f09bc.svg": "./static/media/mp9.305f09bc.svg",
     "static/media/negev.4fa45d24.svg": "./static/media/negev.4fa45d24.svg",
     "static/media/nova.b1ebc5ec.svg": "./static/media/nova.b1ebc5ec.svg",
-    "static/media/observed.scss": "./static/media/oblozhka5.7fa204e8.png",
     "static/media/out.0f039f2c.svg": "./static/media/out.0f039f2c.svg",
     "static/media/p250.5ea2e3f4.svg": "./static/media/p250.5ea2e3f4.svg",
     "static/media/p90.d7cf3f3c.svg": "./static/media/p90.d7cf3f3c.svg",
@@ -112,8 +111,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d824be29.js",
-    "static/js/2.10f71e39.chunk.js",
-    "static/css/main.4d1b0361.chunk.css",
-    "static/js/main.61bdf55d.chunk.js"
+    "static/js/2.30e6cd68.chunk.js",
+    "static/css/main.61ccc07c.chunk.css",
+    "static/js/main.b1044f5e.chunk.js"
   ]
 }

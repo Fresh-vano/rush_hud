@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default class Money extends React.PureComponent<Props> {
-
 	render() {
 		return (
 			<div className={`moneybox ${this.props.side} ${this.props.team} ${this.props.show ? "show" : "hide"}`}>
@@ -29,5 +28,4 @@ export default class Money extends React.PureComponent<Props> {
             </div>
 		);
 	}
-
 }

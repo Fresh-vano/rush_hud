@@ -22,9 +22,7 @@ export default class Kill extends React.Component<{ event: ExtendedKillEvent | B
 						{event.type === "plant" ? <C4 height="18px" />: <Defuse height="18px"/>}
 					</div>
 					<div className={`victim_name`}>{ event.type === "plant" ? "planted the bomb" : "defused the bomb"}</div>
-
 				</div>
-
 			)
 		}
 
@@ -50,5 +48,4 @@ export default class Kill extends React.Component<{ event: ExtendedKillEvent | B
 			</div>
 		);
 	}
-
 }

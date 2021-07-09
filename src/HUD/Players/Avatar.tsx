@@ -1,9 +1,7 @@
 import React from 'react';
 import { isDev, port } from '../../api/api';
 import { actions } from '../../App';
-
 import { avatars } from './../../api/avatars';
-
 import { Skull } from './../../assets/Icons';
 
 interface IProps {
@@ -28,7 +26,6 @@ export default class Avatar extends React.Component<IProps, IState> {
   }
   render(){
     const { enableCams } = this.state;
-    //const url = avatars.filter(avatar => avatar.steamid === this.props.steamid)[0];
     const avatarData = avatars[this.props.steamid];
     if(!avatarData || !avatarData.url){
         return '';

@@ -26,6 +26,25 @@
                         "label": "Hide trivia"
                     }
                 ]
+            },
+            {
+                "type":"image",
+                "name":"button_image",
+                "label":"Ads logo"
+            },
+            {
+                "type": "action",
+                "name": "Ads show",
+                "values": [
+                    {
+                        "name": "show",
+                        "label": "Show ads"
+                    },
+                    {
+                        "name": "hide",
+                        "label": "Hide ads"
+                    }
+                ]
             }
         ]
     },
@@ -132,7 +151,6 @@
                     }
                 ]
             }
-
         ]
     }
 ]

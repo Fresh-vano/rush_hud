@@ -12,7 +12,6 @@ export default class Bomb extends React.Component<any, { width: number; show: bo
     };
   }
   
-  
   hide = () => {
     this.setState({ show: false, width: 10 });
   };

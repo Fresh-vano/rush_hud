@@ -6,7 +6,6 @@
     left: 50%;
     transform: translateX(-50%);
 
-
     .avatar {
         width: 100px;
         height: 100px;
@@ -31,12 +30,6 @@
         left: 100px;
         opacity: 1;
         border-top-right-radius: 10px;
-       /*.logo {
-            height: 43px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }*/
         .line1_left {
             height: 40px;
             width: 230px;
@@ -262,9 +255,6 @@
                 position: relative;
                 float: right;
                 top: 5px;
-                &:last-child {
-                    //margin-right: 5px;
-                }
                 .weapon.grenade{
                     height: 20px;
                     margin-left: 0px;
@@ -272,137 +262,6 @@
             }
         }
     }
-
-
-
-
-
-   /* .grenade_container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        width: 140px;
-        justify-content: center;
-    
-    }
-    .weapon.grenade {
-        height: 28px;
-        /*filter: invert(1);
-        &:last-child {
-            margin-right: 5px;
-        }
-    }
-    
-    .stats_row {
-        height: 28px;
-        .stats_cell {
-            height: 100%;
-            width: 56px;
-            display: flex;
-            flex-direction: column;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            .label {
-                height: 13px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 10px;
-                color: #b2b2b2;
-            }
-            .stat {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-        .ammo {
-            height: 100%;
-            width: 140px;
-            display: flex;
-            .ammo_counter {
-                flex: 1;
-                display: flex;
-                font-size: 18px;
-                font-weight: 600;
-                > div {
-                    width: 32px;
-                    display: flex;
-                    align-items: center;
-                }
-                .ammo_clip {
-                    justify-content: flex-end;
-                }
-                .ammo_reserve {
-                    justify-content: flex-start;
-                }
-            }
-            .ammo_icon_container {
-                display: flex;
-                height: 100%;
-                width: 48px;
-                align-items: center;
-                justify-content: center;
-                svg {
-                    max-width: 30px;
-                    fill: white;
-                }
-            }
-        }
-        .health_armor_container {
-            display: flex;
-            height: 100%;
-            width: 140px;
-            justify-content: center;
-            .text {
-                width: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 600;
-                font-size: 21px;
-                height: 100%;
-                padding-top: 2px;
-            }
-            
-            .icon {
-                display: flex;
-                width: 30px;
-                align-items: center;
-                justify-content: center;
-                svg {
-                    max-height:30px;
-                    max-width:22px;
-                }
-            }
-        }
-        .statistics {
-            height: 100%;
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-            .stat {
-                display: flex;
-                font-weight: 600;
-                font-size: 18px;
-                margin-right: 24px;
-            }
-        }
-    }
-    .sidebar {
-        width: 10px;
-        height: 100%;
-        position: absolute;
-        &:first-child {
-            left: -10px;
-        }
-        &:last-child {
-            right: -10px;
-        }
-    }*/
-    
     
     &.T {
         .obs_lane1{
@@ -415,66 +274,6 @@
         }
     }
 }
-
-.league_box{
-    height: 60px;
-    width: 480px;
-    position: fixed;
-    left: 50%;
-    bottom: 15px;
-    opacity: 0.75;
-    transform: translateX(-50%);
-    border-radius: 10px;
-    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, rgba(57, 13, 151,1) 15%, rgba(99, 29, 207,1) 85%, rgba(2,16,42,0) 100%);
-    filter: blur(px);
-    .league_box_img{
-        opacity: 1;
-        height:90%;
-        width: 80%;
-        background-image: url('./../../assets/oblozhka5.png');
-        //background-image: url('./../../assets/gif.gif');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position:center;
-        margin-bottom: 5px;
-        margin-top:2px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/*.league_box{
-    height: 50px;
-    width: 1000px;
-    position: fixed;
-    left: 50%;
-    bottom: 0px;
-    opacity: 0.75;
-    transform: translateX(-50%);
-    border-radius: 10px;
-    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, rgba(57, 13, 151,1) 10%, rgba(99, 29, 207,1) 90%, rgba(2,16,42,0) 100%);
-    filter: blur(px);
-    .league_box_img_1,
-    .league_box_img_2,
-    .league_box_img_3{
-        height:40px;
-        width: 270px;
-        //background-image: url('./../../assets/oblozhka5.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position:center;
-        max-width: 280px;
-        margin-top:5px;
-        border: dashed;
-        position: relative;
-        margin-left: 10px;
-        margin-right: 10px;
-        float: left;
-    }
-    .league_box_img_1{
-        margin-left: 60px;
-    }
-}*/
 
 #cameraFeed {
     width: 100px;

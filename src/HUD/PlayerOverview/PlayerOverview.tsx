@@ -52,7 +52,6 @@ export default class PlayerOverview extends React.Component<IProps> {
         const data = this.getData();
         if(!player || !veto || !veto.rounds || !data) return null;
         let url = null;
-        //const avatarData = avatars.find(avatar => avatar.steamid === player.steamid);
         const avatarData = avatars[player.steamid];
         if(avatarData && avatarData.url){
             url = avatarData.url;

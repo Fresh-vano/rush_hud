@@ -17,8 +17,8 @@ import Overview from "../Overview/Overview";
 import Tournament from "../Tournament/Tournament";
 import Pause from "../PauseTimeout/Pause";
 import Timeout from "../PauseTimeout/Timeout";
-import LastRound from "../PauseTimeout/LastRound"
-
+import LastRound from "../PauseTimeout/LastRound";
+import AdsBox from "../AdsBox/AdsBox";
 
 interface Props {
   game: CSGO,
@@ -115,7 +115,7 @@ export default class Layout extends React.Component<Props, State> {
   }
 
   render() {
-    const { game, match } = this.props;
+    const { game, match,  } = this.props;
     const left = game.map.team_ct.orientation === "left" ? game.map.team_ct : game.map.team_t;
     const right = game.map.team_ct.orientation === "left" ? game.map.team_t : game.map.team_ct;
     const leftPlayers = game.players.filter(player => player.team.side === left.side);
@@ -125,12 +125,7 @@ export default class Layout extends React.Component<Props, State> {
 
     return (
       <div className="layout">
-        <div className="league_box">
-        <div className="league_box_img"></div>
-          <div className="league_box_img_1"></div>
-          <div className="league_box_img_2"></div>
-          <div className="league_box_img_3"></div>
-        </div>
+        <AdsBox />
         <div className={`players_alive`}>
           <div className="title_container">Players alive</div>
           <div className="counter_container">
@@ -156,8 +151,6 @@ export default class Layout extends React.Component<Props, State> {
         <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} map={game.map} top={this.top_player()}/>
 
         <Trivia />
-
-
 
         <MapSeries teams={[left, right]} match={match} isFreezetime={isFreezetime} map={game.map} />
         <div className={"boxes left"}>
