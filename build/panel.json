@@ -28,9 +28,14 @@
                 ]
             },
             {
-                "type":"image",
-                "name":"button_image",
-                "label":"Ads logo"
+                "type": "text",
+                "name": "folder_path",
+                "label": "Путь до папки"
+            },
+            {
+                "type": "text",
+                "name": "files",
+                "label": "Файлы для отображения"
             },
             {
                 "type": "action",

@@ -29,9 +29,18 @@ export default class AdsBox extends React.Component<any, {image?: string, show: 
     const { image, show} = this.state;
     const encoding = image && isSvg(Buffer.from(image, 'base64')) ? 'svg+xml':'png';
     return(
-      <div className={`league_box ${show ? "show" : "hide"}`}>
+      <div className="league_box">
         <div className="image_container">
           {this.state.image ? <img src={`data:image/${encoding};base64,${image}`}/>:''}
+        </div>
+        <div className={`image ${show ? "show" : "hide"}`}>
+          <div className='one'></div>
+          <div className='two'></div>
+          <div className='three'></div>
+          <div className='four'></div>
+          <div className='five'></div>
+          <div className='six'></div>
+          <div className='seven'></div>
         </div>
       </div>
     );
