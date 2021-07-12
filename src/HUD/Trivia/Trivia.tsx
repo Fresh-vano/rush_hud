@@ -1,14 +1,14 @@
 import React from 'react';
 import './trivia.scss';
+import isSvg from '../isSvg';
+
 
 import {configs, actions} from './../../App';
 
-export default class Trivia extends React.Component<any, { title: string, content: string, show: boolean }> {
+export default class Trivia extends React.Component<any, { image?: string, show: boolean }> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
-            title:'Title',
-            content:'Content',
             show: false
 		}
 	}
@@ -18,11 +18,9 @@ export default class Trivia extends React.Component<any, { title: string, conten
             if(!data) return;
             const trivia = data.trivia;
             if(!trivia) return;
-
-            if(trivia.title && trivia.content){
-                this.setState({title:trivia.title, content:trivia.content})
-            }
-        });
+            if(`trivia_image` in trivia){
+                this.setState({image:trivia[`trivia_image`]});
+            }});
         actions.on("triviaState", (state: any) => {
             this.setState({show: state === "show"})
         });
@@ -32,10 +30,12 @@ export default class Trivia extends React.Component<any, { title: string, conten
 	}
 	
 	render() {
+        const encoding = this.state.image && isSvg(Buffer.from(this.state.image, 'base64')) ? 'svg+xml':'png';
 		return (
 			<div className={`trivia_container ${this.state.show ? 'show': 'hide'}`}>
-                <div className="title">{this.state.title}</div>
-                <div className="content">{this.state.content}</div>
+                <div className="image_container">
+                    {this.state.image ? <img src={`data:image/${encoding};base64,${this.state.image}`}/>:''}
+                </div>
             </div>
 		);
 	}

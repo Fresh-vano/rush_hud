@@ -12,16 +12,16 @@
     position: fixed;
     left: 50%;
     bottom: 15px;
-    opacity: 0.8;
-    transition: all 1s;
+    opacity: 1;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, rgba(57, 13, 151,1) 15%, rgba(99, 29, 207,1) 85%, rgba(2,16,42,0) 100%);
+    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, var(--sub-panel-color) 15%, var(--sub-panel-color) 85%, rgba(2,16,42,0) 100%);
     filter: blur(px);
     .image_container{
         height:100%;
         width: 100%;
         display: flex;
         position: absolute;
+        transition: all 1s;
         align-items: center;
         justify-content: space-around;
         background-size: contain;

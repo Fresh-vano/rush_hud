@@ -4,14 +4,9 @@
         "name":"trivia",
         "inputs": [
             {
-                "type": "text",
-                "name": "title",
-                "label": "Trivia title"
-            },
-            {
-                "type": "text",
-                "name": "content",
-                "label": "Trivia content"
+                "type":"image",
+                "name":"trivia_image",
+                "label":"Trivia image"
             },
             {
                 "type": "action",
@@ -28,14 +23,9 @@
                 ]
             },
             {
-                "type": "text",
-                "name": "folder_path",
-                "label": "Путь до папки"
-            },
-            {
-                "type": "text",
-                "name": "files",
-                "label": "Файлы для отображения"
+                "type":"image",
+                "name":"button_image",
+                "label":"Ads logo"
             },
             {
                 "type": "action",
