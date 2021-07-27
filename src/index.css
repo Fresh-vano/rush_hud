@@ -1,4 +1,5 @@
 @import "fonts/Arial.css";
+@import "fonts/Stapel_Extra_Bold.css";
 html,
 body,
 #root {
@@ -8,7 +9,7 @@ body,
 
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Stapel_Extra_Bold";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,7 +25,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Stapel_Extra_Bold',
     monospace;
 }
 

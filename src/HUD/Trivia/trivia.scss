@@ -1,24 +1,6 @@
-@keyframes open {
-    from{
-        width: 0%;
-    }
-    to{
-        width: 100%;
-    }
-}
-
-@keyframes close{
-    from{
-        width: 100%;
-    }
-    to{
-        width: 0%;
-    }
-}
-
 .trivia_container {
-    max-width: 650px;
-    max-height: 400px;
+    max-width: 387px;
+    max-height: 238px;
     position: absolute;
     top:150px;
     right:10px;
@@ -34,8 +16,8 @@
     }
 }
 .trivia_container .image_container {
-    max-width: 650px;
-    max-height: 400px;
+    max-width: 387px;
+    max-height: 238px;
     position: relative;
     display: flex;
     align-items: center;
@@ -47,7 +29,7 @@
     img{
         max-width: 90%;
         max-height: 95%;
-        min-height: 300px;
-        min-width: 400px;
+        min-height: 120px;
+        min-width: 194px;
     }
 }

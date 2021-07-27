@@ -4,6 +4,7 @@
 	left: 10px;
 	border: none;
 	background-color: rgba(0,0,0,0.5);
+	border-bottom-right-radius: 10px;
 }
 #iframe_radar {
 	border: none;
@@ -17,11 +18,11 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	background-color: var(--main);
+	background-color: #ff9531;
 	opacity: 0.8;
 	border-bottom-right-radius: 10px;
 	position:relative;
-	top: 10px;
+	top: 0px;
 }
 .veto_entry {
 	display: flex;
@@ -31,30 +32,19 @@
 	margin-bottom: 5px;
 	&.active{
 		background-color: var(--white-full);
-		border-radius: 10px;
-		
+		border-radius: 7px;
 	}
 	>div {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: white;
+		color: black;
 		text-transform: uppercase;
 		font-size: 10pt;
-	}
-	.team_logo {
-		img {
-			max-height: 23px;
-			padding-right: 3px;
-			max-width: 23px;
-		}
-		.logo {
-			height: 23px;
-			width: 23px;
-		}
+		font-family: "Stapel_Extra_Bold";
+		letter-spacing: 1pt;
 	}
 	.map_name.active {
-		color: black;
 		font-weight: 600;
 	}
 }

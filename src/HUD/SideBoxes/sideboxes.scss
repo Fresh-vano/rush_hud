@@ -41,18 +41,20 @@
 	flex-direction: row;
 	opacity: 1;
 	transition: all 0.75s;
-	background-color: var(--main);
+	background-color: #ff9531;
 	margin-bottom: 4px;
 	margin-top: 4px;
 	align-items: center;
 	border-radius: 10px;
 	.title_container {
-		color: var(--white-full);
+		color: white;
 		height: 60px;
 		width: 100%;
 		font-size: 20px;
 		display: flex;
 		flex-direction: column;
+		font-family: "Stapel_Extra_Bold";
+		letter-spacing: 2px;
 		>div {
 			flex: 1;
 			display: flex;
@@ -96,18 +98,17 @@
 		height: 24px;
 	}
 	.title {
-		font-family: "Arial", sans-serif;
+		font-family: "Arial";
 		text-align: center;
 		vertical-align: text-bottom;
 		line-height: 23px;
 		font-size: 18px;
 		font-weight: normal;
-		color: var(--white-full);
+		color: white;
 		position: relative;
 	}
 	.grenades_container {
 		display: flex ;
-		
 		flex: 1;
 		height: 46px;
 		.grenade_container {
