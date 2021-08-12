@@ -45,45 +45,41 @@
         &.hide{
             opacity: 0;
         }
-        .one, .two, .three, .four, .five, .six, .seven{
+        .two, .three, .four, .five, .six, .seven{
             opacity: 0;
             height: 64px;
             width: 100%;
             position: absolute;
             animation-name: fade;
-            animation-duration: 105s;
+            animation-duration: 90s;
             animation-iteration-count: infinite;
             background-size: contain;
             background-repeat: no-repeat;
             background-position:center;
             top: 3px;
         }
-        .one{
-            background-image:url('./../../assets/0.png');
-            animation-delay: 0s;
-        }
         .two{
-            animation-delay: 15s;
+            animation-delay: 0s;
             background-image:url('./../../assets/1.png');
         }
         .three{
-            animation-delay: 30s;
+            animation-delay: 15s;
             background-image:url('./../../assets/2.png');
         }
         .four{
-            animation-delay: 45s;
+            animation-delay: 30s;
             background-image:url('./../../assets/3.png');
         }
         .five{
-            animation-delay: 60s;
+            animation-delay: 45s;
             background-image:url('./../../assets/4.png');
         }
         .six{
-            animation-delay: 75s;
+            animation-delay: 60s;
             background-image:url('./../../assets/5.png');
         }
         .seven{
-            animation-delay: 90s;
+            animation-delay: 75s;
             background-image:url('./../../assets/6.png');
         }
     }

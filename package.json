@@ -1,6 +1,6 @@
 {
   "name": "rush_hud",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "homepage": "./",
   "private": true,
   "dependencies": {

@@ -49,6 +49,7 @@
         .player {
             .avatar{
                 float: left;
+                left: 6px;
             }
             .player_section_top, .hp_bar{
                 border-top-right-radius: 10px;
@@ -62,23 +63,23 @@
             }
             .username, .money {
                 float: left;
-                left: 10px;
+                left: 92px;
             }
             .username {
                 text-align: left;
             }
             .armor {
-                left: 45%;
+                left: 57%;
             }
             .bomb{
-                left: 6%;
+                left: 26%;
             }
             .grenades {
                 float: right;
                 right: 10px;
             }
             .player_round_kills {
-                left: 10px;
+                left: 92px;
                 .kill{
                     .player_kill_background{
                         float: left;
@@ -105,7 +106,7 @@
                 }
             }
             .hp_bar, .player_section_top, .player_section_center, .player_section_bottom {
-                left: 82px;
+                left: 0px;
             }
             .weapon{
                 float: right;
@@ -136,6 +137,9 @@
             .player_data, .avatar {
                 float: right;
             }
+            .avatar {
+                right: 6px;
+                }
             .player_section_top, .hp_bar{
                 border-top-left-radius: 10px;
             }
@@ -149,25 +153,25 @@
             .username {
                 text-align: right;
                 float: right;
-                right: 10px;
+                right: 92px;
             }
             .money{
                 text-align: right;
                 float: right;
-                right:10px;
+                right:92px;
 
             }
             .armor{
-                right: 45%;
+                right: 56%;
             }
             .bomb{
-                left: 30px;
+                left: 32px;
             }
             .grenades {
                 left: 20px;
             }
             .hp_bar, .player_section_top, .player_section_center, .player_section_bottom {
-                right: 82px;
+                right: 0px;
             }
             .player_data .player_section_center .weapon svg.weapon{
                 float: left;
@@ -184,7 +188,7 @@
             }
             .player_round_kills{
                 float: right;
-                right: 11px;
+                right: 93px;
                 .player_kill_background{
                     float: right;
                 }
@@ -271,7 +275,7 @@
                     filter: grayscale(100%);
                 }   
                 .player_section_top, .player_section_center, .player_section_bottom {
-                    width: 50%; 
+                    width: 60%; 
                 }
                 .player_section_top .health {
                     opacity: 0;
@@ -307,13 +311,13 @@
                 }
             }
             .hp_bar {
-                width: 305px;
+                width: 387px;
                 height: 25px;
                 position: absolute;
                 z-index: 1;
             }
             .player_section_top{
-                width: 305px;
+                width: 387px;
                 height: 25px;
                 position: absolute; 
                 background-color: var(--main-panel-color);
@@ -347,7 +351,7 @@
                 }
             }
             .player_section_center{
-                width: 305px;
+                width: 387px;
                 height: 30px;
                 position: absolute;
                 top: 25px;
@@ -394,7 +398,7 @@
                 }
             }
             .player_section_bottom {
-                width: 305px;
+                width: 387px;
                 height: 25px;
                 position: absolute;
                 top: 55px;
@@ -530,8 +534,8 @@
             height: 80px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
             position: relative;
+            z-index: 2;
         }
     }
 }
@@ -540,6 +544,7 @@
     display: flex;
     flex-direction: column;
     width: 180px;
+    height: 70px;
     background-color: var(--blue);
     position: fixed;
     right: 10px;//55px
@@ -571,7 +576,7 @@
         color: white;
         text-transform: uppercase;
         text-align: center;
-        height:20px;
+        height:25px;
         font-size:14px;
         display: flex;
         align-items: center;

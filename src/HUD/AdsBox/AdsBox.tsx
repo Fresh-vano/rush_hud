@@ -34,7 +34,6 @@ export default class AdsBox extends React.Component<any, {image?: string, show: 
           {this.state.image ? <img src={`data:image/${encoding};base64,${image}`}/>:''}
         </div>
         <div className={`image ${show ? "show" : "hide"}`}>
-          <div className='one'></div>
           <div className='two'></div>
           <div className='three'></div>
           <div className='four'></div>

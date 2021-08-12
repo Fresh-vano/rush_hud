@@ -447,9 +447,10 @@
 	.defuse_timer {
 		height: 30px;
 		position: absolute;
-		width: 300px;
+		max-width: 280px;
 		top: 5px;
 		opacity: 1;
+		border-radius: 10px;
 		&.CT{
 			background-color: var(--color-new-ct);
 		}
@@ -480,7 +481,7 @@
 			line-height: 40px;
 			font-size: 20px;
 			font-weight: normal;
-			border-radius: 10px;
+			padding-left: 10px;
 			color: white !important;
 		}
     }
@@ -490,11 +491,11 @@
 		}
 		.T{
 			text-align: left;
-			left: 20px;
+			left: 10px;
 		}
 		.CT{
 			text-align: left;
-			left: 20px;
+			left: 10px;
 		}
         .defuse_plant_bar {
 			background-color: #02102a;

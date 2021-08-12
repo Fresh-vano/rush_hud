@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "./static/css/main.66aead3b.chunk.css",
-    "main.js": "./static/js/main.00b4618c.chunk.js",
+    "main.css": "./static/css/main.6a1011e4.chunk.css",
+    "main.js": "./static/js/main.fee9cc14.chunk.js",
     "runtime-main.js": "./static/js/runtime-main.d824be29.js",
     "static/js/2.a768364f.chunk.js": "./static/js/2.a768364f.chunk.js",
     "index.html": "./index.html",
     "static/js/2.a768364f.chunk.js.LICENSE.txt": "./static/js/2.a768364f.chunk.js.LICENSE.txt",
-    "static/media/adsbox.scss": "./static/media/0.7fa204e8.png",
+    "static/media/adsbox.scss": "./static/media/1.7fa204e8.png",
     "static/media/index.css": "./static/media/Stapel_Extra_Bold.88e3f821.otf",
     "static/media/ak47.352c679d.svg": "./static/media/ak47.352c679d.svg",
     "static/media/aug.4186fc43.svg": "./static/media/aug.4186fc43.svg",
@@ -114,7 +114,7 @@
   "entrypoints": [
     "static/js/runtime-main.d824be29.js",
     "static/js/2.a768364f.chunk.js",
-    "static/css/main.66aead3b.chunk.css",
-    "static/js/main.00b4618c.chunk.js"
+    "static/css/main.6a1011e4.chunk.css",
+    "static/js/main.fee9cc14.chunk.js"
   ]
 }
