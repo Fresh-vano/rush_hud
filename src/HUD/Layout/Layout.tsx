@@ -19,6 +19,7 @@ import Pause from "../PauseTimeout/Pause";
 import Timeout from "../PauseTimeout/Timeout";
 import LastRound from "../PauseTimeout/LastRound";
 import AdsBox from "../AdsBox/AdsBox";
+import PlayersAlive from "../PlayersAlive/PlayersAlive"
 
 interface Props {
   game: CSGO,
@@ -126,19 +127,12 @@ export default class Layout extends React.Component<Props, State> {
     return (
       <div className="layout">
         <AdsBox />
-        <div className={`players_alive`}>
-          <div className="title_container">Players alive</div>
-          <div className="counter_container">
-            <div className={`team_counter ${left.side}`}>{leftPlayers.filter(player => player.state.health > 0).length}</div>
-            <div className={`vs_counter`}>VS</div>
-            <div className={`team_counter ${right.side}`}>{rightPlayers.filter(player => player.state.health > 0).length}</div>
-          </div>
-        </div>
+        <PlayersAlive game={game}/>
         <Killfeed />
         <Overview match={match} map={game.map} players={game.players || []} />
         <RadarMaps match={match} map={game.map} game={game} />
         <MatchBar map={game.map} phase={game.phase_countdowns} bomb={game.bomb} match={match} isFreezetime={isFreezetime} />
-        <Pause  phase={game.phase_countdowns}/>
+        <Pause phase={game.phase_countdowns}/>
         <Timeout map={game.map} phase={game.phase_countdowns} />
         <LastRound map={game.map} isFreezetime={isFreezetime}/>
         <SeriesBox map={game.map} phase={game.phase_countdowns} match={match} />

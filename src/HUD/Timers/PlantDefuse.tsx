@@ -1,11 +1,10 @@
 import React from "react";
-
+import { C4, Defuse } from "./../../assets/Icons";
 import { Timer } from "../MatchBar/MatchBar";
 import { Player } from "csgogsi";
 
 interface IProps {
-  timer: Timer | null;
-  side: "right" | "left"
+  timer: Timer | null,
   show: boolean;
 }
 
@@ -14,26 +13,29 @@ export default class Bomb extends React.Component<IProps> {
     if(!player||this.props.show) return null;
     if(type === "defusing"){
       return <>
-        <div className={'CT'}>{player.name} is defusing</div>
+        <div className={'CT'}>{player.name}</div>
       </>;
     }
     return <>
-      <div className={'T'}>{player.name} is planting</div>
+      <div className={'T'}>{player.name}</div>
     </>;
   }
   render() {
-    const { side, timer } = this.props;
+    const { timer, show } = this.props;
     return (
       <>
-      <div className={`defuse_plant_container ${side} ${timer && timer.active ? 'show' :'hide'}`}>
-        {
-          timer ?
-          <div className={`defuse_plant_caption`}>
-            {this.getCaption(timer.type, timer.player)}
-          </div> : null
-        }
-          <div className="defuse_plant_bar"></div>
-        <div className={`defuse_timer ${timer && timer.type==="defusing" ? 'CT' : 'T'}`} style={{ width: `${(timer && timer.width) || 0}%`}}></div>
+      <div className={`defuse_plant_container ${timer && timer.active && !show ? 'show' :'hide'} ${timer && timer.type==="defusing" ? 'ct' : ''} ${timer && timer.type==="planting" ? 't' : ''}`}>
+        <div className={`defuse_plant_background ${timer && timer.active ? 'show' :'hide'}`}></div>
+        <div className={"container"}>
+          <div className="defuse_plant_icon">{timer && timer.type==="defusing" ? <Defuse/> : "" }{timer && timer.type==="planting" ? <C4/> : "" }</div>
+          {
+            timer ?
+            <div className={`defuse_plant_caption`}>
+              {this.getCaption(timer.type, timer.player)}
+            </div> : null
+          }
+        </div>
+        <div className={`defuse_timer`} style={{ width: `${100-((timer && timer.width) || 100)}%`}}></div>
       </div>
       </>
     );

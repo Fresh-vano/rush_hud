@@ -250,6 +250,14 @@
         position: relative;
         margin-bottom: 5px;
         &.active_left {
+            &.dead{
+                .player_data{
+                    width: 60%;
+                    .player_section_top, .player_section_center, .player_section_bottom {
+                        width: 100%; 
+                    }
+                }
+            }
             .player_data {
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
@@ -258,6 +266,14 @@
             }
         }
         &.active_right{
+            &.dead{
+                .player_data{
+                    width: 60%;
+                    .player_section_top, .player_section_center, .player_section_bottom {
+                        width: 100%; 
+                    }
+                }
+            }
             .player_data{
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
@@ -271,12 +287,12 @@
                 background-color: var(--main-panel-color) !important;
             }
             .player_data {
-                .avatar {
-                    filter: grayscale(100%);
-                }   
                 .player_section_top, .player_section_center, .player_section_bottom {
                     width: 60%; 
                 }
+                .avatar {
+                    filter: grayscale(100%);
+                }   
                 .player_section_top .health {
                     opacity: 0;
                 }
@@ -537,52 +553,5 @@
             position: relative;
             z-index: 2;
         }
-    }
-}
-
-.players_alive {
-    display: flex;
-    flex-direction: column;
-    width: 180px;
-    height: 70px;
-    background-color: var(--blue);
-    position: fixed;
-    right: 10px;//55px
-    top: 10px;
-    border-radius: 10px;
-    opacity: 0.8;
-    transition: opacity 1s;
-    letter-spacing: 2px;
-    .counter_container {
-        display: flex;
-        height: 45px;
-        > div {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size:28px;
-            color: white;
-        }
-        .CT {
-            color: var(--color-new-ct);
-        }
-        .T {
-            color: var(--color-new-t);
-        }
-    }
-    .title_container {
-        top: 5px;
-        color: white;
-        text-transform: uppercase;
-        text-align: center;
-        height:25px;
-        font-size:14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    &.hide {
-        opacity: 0;
     }
 }
