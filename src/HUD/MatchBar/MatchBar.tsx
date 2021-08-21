@@ -7,6 +7,7 @@ import Countdown from "./../Timers/Countdown";
 import { GSI } from "../../App";
 import { Match } from "../../api/interfaces";
 import { Timer } from "../../assets/Icons";
+import PlantDefuse from "../Timers/PlantDefuse";
 
 function stringToClock(time: string | number, pad = true) {
   if (typeof time === "string") {
@@ -52,7 +53,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       defusing: {
-        width: 0,
+        width: 100,
         active: false,
         countdown: 10,
         side: "left",
@@ -60,7 +61,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
         player: null
       },
       planting: {
-        width: 0,
+        width: 100,
         active: false,
         countdown: 10, // Fake
         side: "right",
@@ -168,6 +169,8 @@ export default class TeamBox extends React.Component<IProps, IState> {
     const OT = Math.ceil(additionalRounds/6);
     return `OT ${OT} (${additionalRounds - (OT - 1)*6} / 6)`;
   }
+
+
   render() {
     const { defusing, planting, winState } = this.state;
     const { bomb, map, phase, isFreezetime, match } = this.props;
@@ -191,7 +194,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
     return (
       <>
         <div id={`matchbar`}>
-          <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} />
+          <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} winState={winState.show}/>
           <div className={`score_section_left ${left.side}`}>
             <div className="best_of">
               {new Array(amountOfMaps).fill(0).map((_, i) => (
@@ -207,10 +210,11 @@ export default class TeamBox extends React.Component<IProps, IState> {
             </div>
             <div id="series_text">{ bo ? `Best of ${bo}` : '' }</div>
             <div className={`round_timer_text ${isFreezetime && time10<=5 ? 'freezetime':''} ${isPlanted|| winState.show ? "hide":""}`}>{time}</div>
-            <div id="round_now" className={isPlanted ? "hide":""}>{this.getRoundLabel()}</div>
-            <Bomb />
+            <div id="round_now">{this.getRoundLabel()}</div>
+            <Bomb winState={winState.show}/>
+            <PlantDefuse timer={leftTimer ? leftTimer : rightTimer} show={winState.show}/>
           </div>
-          <TeamScore team={right} orientation={"right"} timer={rightTimer} showWin={winState.show && winState.side === "right"} />
+          <TeamScore team={right} orientation={"right"} timer={rightTimer} showWin={winState.show && winState.side === "right"} winState={winState.show}/>
           <div className={`score_section_right ${right.side}`}>
             <div className="best_of">
             {new Array(amountOfMaps).fill(0).map((_, i) => (
