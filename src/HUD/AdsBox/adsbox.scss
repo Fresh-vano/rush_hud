@@ -1,40 +1,8 @@
-@keyframes fade2 {
-    0%   { opacity: 0; }
-    6% { opacity: 1; }
-    44%   { opacity: 1; }
-    50%  { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-@keyframes fade3 {
-    0%   { opacity: 0; }
-    4% { opacity: 1; }
-    29%   { opacity: 1; }
-    33%  { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-@keyframes fade4 {
-    0%   { opacity: 0; }
-    3% { opacity: 1; }
-    22%   { opacity: 1; }
-    25%  { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-@keyframes fade5 {
-    0%   { opacity: 0; }
-    3% { opacity: 1; }
-    17%   { opacity: 1; }
-    20%  { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-@keyframes fade6 {
+@keyframes fade {
     0%   { opacity: 0; }
     2% { opacity: 1; }
-    14%   { opacity: 1; }
-    16%  { opacity: 0; }
+    18%   { opacity: 1; }
+    20%  { opacity: 0; }
     100% { opacity: 0; }
 }
 
@@ -48,146 +16,75 @@
     transform: translateX(-50%);
     background: linear-gradient(90deg, rgba(2,16,42,0) 0%, var(--sub-panel-color) 15%, var(--sub-panel-color) 85%, rgba(2,16,42,0) 100%);
     filter: blur(px);
+    .image_container{
+        height:100%;
+        width: 100%;
+        display: flex;
+        position: absolute;
+        transition: all 1s;
+        align-items: center;
+        justify-content: space-around;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position:center;
+        margin-bottom: 5px;
+        margin-top:2px;
+        img {
+            max-width: 100%;
+            max-height: 64px;
+        }
+    }
     .image{
         height: 100%;
         width: 100%;
         position: absolute;
-        .ads_one, .ads_two, .ads_three, .ads_four, .ads_five, .ads_six {
-            max-height: 64px;
+        opacity: 1;
+        &.show{
+            opacity: 1;
+        }
+        &.hide{
+            opacity: 0;
+        }
+        .one, .two, .three, .four, .five, .six, .seven{
+            opacity: 0;
+            height: 64px;
             width: 100%;
             position: absolute;
+            animation-name: fade;
+            animation-duration: 75s;
             animation-iteration-count: infinite;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position:center;
             top: 3px;
-            opacity: 0;
-            transition: all 1.5s;
-            img {
-                margin-left: auto;
-                margin-right: auto;
-                display: flex;
-                max-width: 100%;
-                height: 64px;
-            }
         }
-    }
-    &.show{
-        opacity: 1;
-    }
-    &.hide{
-        opacity: 0;
-    }
-    &._1{
-        opacity: 1;
-    }
-    &._2{
-        .ads_one{
-            animation-name: fade2;
-            animation-duration: 30s;
+        .one{
+            background-image:url('./../../assets/0.png');
             animation-delay: 0s;
-           
         }
-        .ads_two{
-            animation-name: fade2;
-            animation-duration: 30s;
+        .two{
             animation-delay: 15s;
+            background-image:url('./../../assets/1.png');
         }
-    }
-    &._3{
-        .ads_one{
-            animation-name: fade3;
-            animation-duration: 45s;
-            animation-delay: 0s;
-           
-        }
-        .ads_two{
-            animation-name: fade3;
-            animation-duration: 45s;
-            animation-delay: 15s;
-        }
-        .ads_three{
-            animation-name: fade3;
-            animation-duration: 45s;
+        .three{
             animation-delay: 30s;
+            background-image:url('./../../assets/2.png');
         }
-    }
-    &._4{
-        .ads_one{
-            animation-name: fade4;
-            animation-duration: 60s;
-            animation-delay: 0s;
-        }
-        .ads_two{
-            animation-name: fade4;
-            animation-duration: 60s;
-            animation-delay: 15s;
-        }
-        .ads_three{
-            animation-name: fade4;
-            animation-duration: 60s;
-            animation-delay: 30s;
-        }
-        .ads_four{
-            animation-name: fade4;
-            animation-duration: 60s;
+        .four{
             animation-delay: 45s;
+            background-image:url('./../../assets/3.png');
         }
-    }
-    &._5{
-        .ads_one{
-            animation-name: fade5;
-            animation-duration: 75s;
-            animation-delay: 0s;
-        }
-        .ads_two{
-            animation-name: fade5;
-            animation-duration: 75s;
-            animation-delay: 15s;
-        }
-        .ads_three{
-            animation-name: fade5;
-            animation-duration: 75s;
-            animation-delay: 30s;
-        }
-        .ads_four{
-            animation-name: fade5;
-            animation-duration: 75s;
-            animation-delay: 45s;
-        }
-        .ads_five{
-            animation-name: fade5;
-            animation-duration: 75s;
+        .five{
             animation-delay: 60s;
+            background-image:url('./../../assets/4.png');
         }
-    }
-    &._6{
-        .ads_one{
-            animation-name: fade6;
-            animation-duration: 90s;
-            animation-delay: 0s;
-        }
-        .ads_two{
-            animation-name: fade6;
-            animation-duration: 90s;
-            animation-delay: 15s;
-        }
-        .ads_three{
-            animation-name: fade6;
-            animation-duration: 90s;
-            animation-delay: 30s;
-        }
-        .ads_four{
-            animation-name: fade6;
-            animation-duration: 90s;
-            animation-delay: 45s;
-        }
-        .ads_five{
-            animation-name: fade6;
-            animation-duration: 90s;
-            animation-delay: 60s;
-        }
-        .ads_six{
-            animation-name: fade6;
-            animation-duration: 90s;
+        /*.six{
             animation-delay: 75s;
+            background-image:url('./../../assets/5.png');
         }
+        .seven{
+            animation-delay: 90s;
+            background-image:url('./../../assets/6.png');
+        }*/
     }
 }

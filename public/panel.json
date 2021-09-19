@@ -1,86 +1,5 @@
 [
     {
-        "label":"Ads panel",
-        "name":"ads_panel",
-        "inputs":[
-            {
-                "type":"select",
-                "name":"quantity_ads",
-                "values":[
-                    {
-                        "name":"1",
-                        "label":"1"
-                    },
-                    {
-                        "name":"2",
-                        "label":"2"
-                    },
-                    {
-                        "name":"3",
-                        "label":"3"
-                    },
-                    {
-                        "name":"4",
-                        "label":"4"
-                    },
-                    {
-                        "name":"5",
-                        "label":"5"
-                    },
-                    {
-                        "name":"6",
-                        "label":"6"
-                    }
-                ]
-            },
-            {
-                "type":"image",
-                "name":"ads_1",
-                "label":"Ads 1"
-            },
-            {
-                "type":"image",
-                "name":"ads_2",
-                "label":"Ads 2"
-            },
-            {
-                "type":"image",
-                "name":"ads_3",
-                "label":"Ads 3"
-            },
-            {
-                "type":"image",
-                "name":"ads_4",
-                "label":"Ads 4"
-            },
-            {
-                "type":"image",
-                "name":"ads_5",
-                "label":"Ads 5"
-            },
-            {
-                "type":"image",
-                "name":"ads_6",
-                "label":"Ads 6"
-            },
-            {
-            "type": "action",
-            "name": "Ads show",
-                "values": [
-                    {
-                        "name": "show",
-                        "label": "Show ads"
-                    },
-                    {
-                        "name": "hide",
-                        "label": "Hide ads"
-                    }
-                ]
-            }
-
-        ]
-    },
-    {
         "label": "Trivia",
         "name":"trivia",
         "inputs": [
@@ -100,6 +19,25 @@
                     {
                         "name": "hide",
                         "label": "Hide trivia"
+                    }
+                ]
+            },
+            {
+                "type":"image",
+                "name":"button_image",
+                "label":"Ads logo"
+            },
+            {
+                "type": "action",
+                "name": "Ads show",
+                "values": [
+                    {
+                        "name": "show",
+                        "label": "Show ads"
+                    },
+                    {
+                        "name": "hide",
+                        "label": "Hide ads"
                     }
                 ]
             }
