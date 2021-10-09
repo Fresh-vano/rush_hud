@@ -2,7 +2,6 @@ import React from "react";
 import * as I from "csgogsi-socket";
 import { Timer } from "./MatchBar";
 import TeamLogo from './TeamLogo';
-import PlantDefuse from "../Timers/PlantDefuse"
 
 interface IProps {
   team: I.Team;
@@ -14,7 +13,7 @@ interface IProps {
 
 export default class TeamScore extends React.Component<IProps> {
   render() {
-    const { orientation, timer, team, showWin, winState } = this.props;
+    const { orientation, team } = this.props;
     return (
       <>
         <div className={`team ${orientation} ${team.side}`}>

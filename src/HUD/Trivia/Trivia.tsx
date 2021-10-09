@@ -34,7 +34,7 @@ export default class Trivia extends React.Component<any, { image?: string, show:
 		return (
 			<div className={`trivia_container ${this.state.show ? 'show': 'hide'}`}>
                 <div className="image_container">
-                    {this.state.image ? <img src={`data:image/${encoding};base64,${this.state.image}`}/>:''}
+                    {this.state.image ? <img src={`data:image/${encoding};base64,${this.state.image}`} alt=''/>:''}
                 </div>
             </div>
 		);

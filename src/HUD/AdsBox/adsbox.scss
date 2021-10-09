@@ -1,9 +1,23 @@
 @keyframes fade {
-    0%   { opacity: 0; }
-    2% { opacity: 1; }
-    18%   { opacity: 1; }
-    20%  { opacity: 0; }
-    100% { opacity: 0; }
+    0%   { opacity: 0;
+        display: none;
+    }
+    2% { 
+        opacity: 1; 
+        display: block;
+    }
+    18%   { 
+        opacity: 1; 
+        display: block;
+    }
+    20%  { 
+        opacity: 0;
+        display: none;
+    }
+    100% { 
+        opacity: 0; 
+        display: none;
+    }
 }
 
 .league_box{
@@ -44,6 +58,7 @@
         }
         &.hide{
             opacity: 0;
+            display: none;
         }
         .one, .two, .three, .four, .five, .six, .seven{
             opacity: 0;

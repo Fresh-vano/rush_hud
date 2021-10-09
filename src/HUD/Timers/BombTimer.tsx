@@ -44,20 +44,22 @@ export default class Bomb extends React.Component<IProps, any, { width: number; 
 
   render() {
     const { times } = this.state;
-    let bomb_time
+    let bomb_time;
     if(times !== undefined)
       bomb_time = times>10 ? String(times).substring(0,2) : String(times).substring(0,3);
-    console.log(this.state.show)
-    return (
-      <div id={`bomb_container`}>
-        <div className={`bomb_timer ${this.state.show && !this.props.winState && bomb_time !== "-0." ? "show" : "hide"}`} style={{ width: `${100 - this.state.width}%` }}></div>
-        <div className="container">
-          <div className={`bomb_icon ${this.state.show && bomb_time !== "-0." ? "show" : "hide"} ${(this.state.width<=24 && this.state.width>10) && this.state.show? "slow":""} ${this.state.width<10 && this.state.show? "fast":""}`}>
-            <C4 fill="#ffffff"/>
+    if(this.state.show && !this.props.winState && bomb_time !== "-0.")
+      return (
+        <div id={`bomb_container`}>
+          <div className={`bomb_timer`} style={{ width: `${100 - this.state.width}%` }}></div>
+          <div className="container">
+            <div className={`bomb_icon ${(this.state.width<=24 && this.state.width>10) && this.state.show? "slow":""} ${this.state.width<10 && this.state.show? "fast":""}`}>
+              <C4 fill="#ffffff"/>
+            </div>
+            <div className="bomb_text">{bomb_time}</div>
           </div>
-          <div className="bomb_text">{this.state.show && bomb_time!=="-0."? bomb_time : null}</div>
         </div>
-      </div>
-    );
+      );
+    else
+        return (<></>);
   }
 }
