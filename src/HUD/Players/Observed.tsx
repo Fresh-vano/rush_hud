@@ -22,12 +22,10 @@ export default class Observed extends React.Component<{ player: Player | null, v
 		const weapons = Object.values(player.weapons).map(weapon => ({ ...weapon, name: weapon.name.replace("weapon_", "") }));
 		const currentWeapon = weapons.filter(weapon => weapon.state === "active")[0];
 		const grenades = weapons.filter(weapon => weapon.type === "Grenade");
-		const { stats } = player;
 		var countryName = country ? getCountry(country) : null;
 
 		return (
 			<div className={`observed ${player.team.side}`}>
-				<Avatar steamid={player.steamid} height={100} width={100} showCam={true} slot={player.observer_slot}/>
 				<div className="obs_lane1 ">
 					<div className="line1_left">
 						<div className="obs_alias">
@@ -48,30 +46,21 @@ export default class Observed extends React.Component<{ player: Player | null, v
 				<div className="obs_lane2">
 					<div className="flag">{countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} alt={countryName} /> : ''}</div>
 					<div className="lane2_left">
-						<div className="kill"></div>
-						<div className="value">{stats.kills}</div>
-						<div className="death"></div>
-						<div className="value">{stats.deaths}</div>
-						<div className="assist"></div>
-						<div className="value">{stats.assists}</div>
-					</div>
-				</div>
-				<div className="obs_lane3">
-					<div className="lane3_left">
-						<div className="obs_bullets_section"><Bullets /></div>
-						<div className="obs_ammo_section">
-							<div className="obs_clip">{(currentWeapon && currentWeapon.ammo_clip) || "-"}</div>
-							<div className="obs_mid">/</div>
-							<div className="obs_reserve">{(currentWeapon && currentWeapon.ammo_reserve) || "-"}</div>
-						</div>
-					</div>
-					<div className="lane3_right">
-						<div className="grenade_container">
+					<div className="grenade_container">
 						{grenades.map(grenade => <React.Fragment key={`${player.steamid}_${grenade.name}_${grenade.ammo_reserve || 1}`}>
 							<Weapon weapon={grenade.name} active={grenade.state === "active"} isGrenade />
 							{ 
 							grenade.ammo_reserve === 2 ? <Weapon weapon={grenade.name} active={grenade.state === "active"} isGrenade /> : null }
 						</React.Fragment>)}
+						</div>
+					</div>
+					<Avatar steamid={player.steamid} height={100} width={100} showCam={true} slot={player.observer_slot}/>
+					<div className="lane2_right">
+						<div className="obs_bullets_section"><Bullets /></div>
+						<div className="obs_ammo_section">
+							<div className="obs_clip">{(currentWeapon && currentWeapon.ammo_clip) || "-"}</div>
+							<div className="obs_mid">/</div>
+							<div className="obs_reserve">{(currentWeapon && currentWeapon.ammo_reserve) || "-"}</div>
 						</div>
 					</div>
 				</div>

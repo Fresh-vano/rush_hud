@@ -21,15 +21,16 @@
 }
 
 .league_box{
-    height: 70px;
-    width: 480px;
+    height: 80px;
+    width: 580px;
     position: fixed;
     left: 50%;
     bottom: 15px;
     opacity: 1;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, rgba(2,16,42,0) 0%, var(--sub-panel-color) 15%, var(--sub-panel-color) 85%, rgba(2,16,42,0) 100%);
-    filter: blur(px);
+    background: var(--sub-panel-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     .image_container{
         height:100%;
         width: 100%;
@@ -41,11 +42,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position:center;
-        margin-bottom: 5px;
-        margin-top:2px;
+        padding: 4px;
         img {
             max-width: 100%;
-            max-height: 64px;
+            max-height: 72px;
         }
     }
     .image{
@@ -53,6 +53,7 @@
         width: 100%;
         position: absolute;
         opacity: 1;
+        padding: 4px;
         &.show{
             opacity: 1;
         }
@@ -62,7 +63,7 @@
         }
         .one, .two, .three, .four, .five, .six, .seven{
             opacity: 0;
-            height: 64px;
+            height: 72px;
             width: 100%;
             position: absolute;
             animation-name: fade;
@@ -71,7 +72,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position:center;
-            top: 3px;
         }
         .one{
             background-image:url('./../../assets/0.png');
@@ -93,13 +93,5 @@
             animation-delay: 60s;
             background-image:url('./../../assets/4.png');
         }
-        /*.six{
-            animation-delay: 75s;
-            background-image:url('./../../assets/5.png');
-        }
-        .seven{
-            animation-delay: 90s;
-            background-image:url('./../../assets/6.png');
-        }*/
     }
 }
